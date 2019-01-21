@@ -1,1 +1,3 @@
-/* pages/list/list.wxss */
+.card{
+  border-bottom: 1rpx solid #000;
+}

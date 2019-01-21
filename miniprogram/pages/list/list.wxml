@@ -1,2 +1,7 @@
-<!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+<block wx:for="{{stores}}" wx:key="_id">
+<view class="card">
+<view class="card_title">{{item.title}}</view>
+<view class="card_address">{{item.address}}</view>
+<view class="card_thumbsup">{{item.thumbs_up}}</view>
+</view>
+</block>

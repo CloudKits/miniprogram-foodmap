@@ -12,7 +12,7 @@
 	},
 	"appid": "wxd1ca70db507085dd",
 	"projectname": "meishitujian",
-	"libVersion": "2.2.5",
+	"libVersion": "2.4.4",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -30,8 +30,15 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 0,
+			"list": [
+				{
+					"id": -1,
+					"name": "全部内容",
+					"pathName": "pages/list/list",
+					"query": ""
+				}
+			]
 		}
 	}
 }
