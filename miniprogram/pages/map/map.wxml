@@ -1,2 +1,6 @@
-<!--pages/map/map.wxml-->
-<text>pages/map/map.wxml</text>
+<map
+  id="map"
+  scale="14"
+  show-location
+  style='height:{{windowHeight}}px'
+></map>

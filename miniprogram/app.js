@@ -23,7 +23,11 @@ App({
         env: config.envID
       })
     }
+    /**
+     * 获取屏幕高度
+     */
+    let { windowHeight } = wx.getSystemInfoSync();
 
-    this.globalData = {}
+    this.globalData = { windowHeight}
   }
 })
