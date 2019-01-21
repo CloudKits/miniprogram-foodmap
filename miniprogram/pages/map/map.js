@@ -1,12 +1,14 @@
 const mta = require('../../vendor/mta_analysis.js');
 const app = getApp();
+const config = require('../../config.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    longitude: 113.947608,
+    latitude: 22.528687
   },
 
   /**
@@ -22,6 +24,10 @@ Page({
       windowHeight: app.globalData.windowHeight,
     }, () => {
       wx.hideLoading();
+      wx.showToast({
+        title: '双指缩放可以调整地图可视区域，查看更多美食',
+        icon:'none'
+      })
     });
     /**
      * 获取管理员身份校验
@@ -68,24 +74,15 @@ Page({
 
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title: '我在'+config.appName+'上发现了好吃的，你也看看吧！',
+      path: '/pages/map/map',
+      imageUrl:"/images/share.jpg"
+    }
   }
 })

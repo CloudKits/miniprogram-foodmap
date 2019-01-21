@@ -1,7 +1,8 @@
 <map
   id="map"
-  scale="14"
-  show-location
+  scale="16"
+  longitude='{{longitude}}'
+  latitude='{{latitude}}'
   style='height:{{windowHeight}}px'
 >
 </map>
