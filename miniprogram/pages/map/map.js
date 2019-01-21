@@ -1,4 +1,4 @@
-// pages/map/map.js
+const mta = require('../../vendor/mta_analysis.js');
 Page({
 
   /**
@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    mta.Page.init();
   },
 
   /**
