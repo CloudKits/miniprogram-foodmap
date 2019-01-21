@@ -1,6 +1,9 @@
 const mta = require('../../vendor/mta_analysis.js');
 const app = getApp();
 const config = require('../../config.js');
+const db = wx.cloud.database()
+const store = db.collection('store');
+
 Page({
 
   /**
@@ -19,16 +22,18 @@ Page({
       title: '数据加载中...',
     })
     mta.Page.init();
-    
-    this.setData({
-      windowHeight: app.globalData.windowHeight,
-    }, () => {
-      wx.hideLoading();
-      wx.showToast({
-        title: '双指缩放可以调整地图可视区域，查看更多美食',
-        icon:'none'
+    store.get().then(res =>{
+      this.setData({
+        stores: res.data,
+        windowHeight: app.globalData.windowHeight,
+      }, () => {
+        wx.hideLoading();
+        wx.showToast({
+          title: '双指缩放可以调整地图可视区域，查看更多美食',
+          icon: 'none'
+        })
       })
-    });
+    })
     /**
      * 获取管理员身份校验
      */

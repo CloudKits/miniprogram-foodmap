@@ -1,4 +1,4 @@
-<map id="map" scale="16" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px'>
+<map id="map" scale="16" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px' markers="{{stores}}">
   <block wx:if="{{!is_admin}}">
     <cover-view class="button show_all">查看全部</cover-view>
   </block>
