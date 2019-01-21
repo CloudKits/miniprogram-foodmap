@@ -3,4 +3,5 @@
   scale="14"
   show-location
   style='height:{{windowHeight}}px'
-></map>
+>
+</map>

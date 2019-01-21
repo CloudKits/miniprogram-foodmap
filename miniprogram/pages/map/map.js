@@ -17,11 +17,27 @@ Page({
       title: '数据加载中...',
     })
     mta.Page.init();
+    
     this.setData({
-      windowHeight: app.globalData.windowHeight
+      windowHeight: app.globalData.windowHeight,
     }, () => {
       wx.hideLoading();
     });
+    /**
+     * 获取管理员身份校验
+     */
+    let is_admin = false;
+    
+    /**
+     * 调用云函数检查用户身份
+     */
+    let result = wx.cloud.callFunction({
+      name: "checkUserAuth"
+    }).then(res => {
+      this.setData({
+        is_admin: res.result.data.is_administrator
+      })
+    })
   },
 
   /**
