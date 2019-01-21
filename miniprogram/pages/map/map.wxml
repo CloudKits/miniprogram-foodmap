@@ -1,8 +1,9 @@
-<map
-  id="map"
-  scale="16"
-  longitude='{{longitude}}'
-  latitude='{{latitude}}'
-  style='height:{{windowHeight}}px'
->
+<map id="map" scale="16" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px'>
+  <block wx:if="{{!is_admin}}">
+    <cover-view class="button show_all">查看全部</cover-view>
+  </block>
+  <block wx:else>
+    <cover-view class="button add_store">添加店铺</cover-view>
+    <cover-view class="button show_all">查看全部</cover-view>
+  </block>
 </map>

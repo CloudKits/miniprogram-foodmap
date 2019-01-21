@@ -1,3 +1,17 @@
 map{
   width: 750rpx;
 }
+.add_store{
+  position: absolute;
+  left: 100rpx;
+  bottom: 100rpx;
+  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+}
+.show_all{
+  position: absolute;
+  right: 100rpx;
+  bottom: 100rpx;
+  color: #7795f8;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+}
