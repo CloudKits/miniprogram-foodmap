@@ -81,7 +81,7 @@ Page({
   onShareAppMessage: function() {
     return {
       title: '我在'+config.appName+'上发现了好吃的，你也看看吧！',
-      path: '/pages/map/map',
+      path: '/pages/map/map?_mta_ref_id=group',
       imageUrl:"/images/share.jpg"
     }
   }
