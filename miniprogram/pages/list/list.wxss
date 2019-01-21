@@ -1,3 +1,29 @@
 .card{
-  border-bottom: 1rpx solid #000;
+  border-bottom: 1rpx solid #cecece;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding:10rpx;
+}
+.card_title{
+  font-size: 50rpx;
+  font-weight: 700;
+}
+.card_infobar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card_address{
+  font-size: 30rpx;
+  font-weight: 300;
+}
+.card_thumbsup{
+  font-size: 30rpx;
+  font-weight: 700;
+  
+}
+.card_thumbsup::after{
+  content: "人点赞";
+  font-weight: 300;
 }
