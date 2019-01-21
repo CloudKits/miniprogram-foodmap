@@ -1,4 +1,4 @@
-<map id="map" scale="16" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px' markers="{{stores}}">
+<map id="map" scale="16" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px' markers="{{stores}}" subkey="{{mapSubKey}}" show-compass="{{true}}">
   <block wx:if="{{!is_admin}}">
     <cover-view class="button show_all" bindtap="viewAll">查看全部</cover-view>
   </block>

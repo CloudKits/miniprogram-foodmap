@@ -12,7 +12,8 @@ Page({
   data: {
     longitude: 113.947608,
     latitude: 22.528687,
-    windowHeight:600
+    windowHeight:600,
+    mapSubKey: config.mapSubKey
   },
 
   /**
