@@ -12,7 +12,7 @@ Page({
   data: {
     longitude: 113.947608,
     latitude: 22.528687,
-    windowHeight:600,
+    windowHeight: 600,
     mapSubKey: config.mapSubKey
   },
 
@@ -24,7 +24,7 @@ Page({
       title: '数据加载中...',
     })
     mta.Page.init();
-    store.get().then(res =>{
+    store.get().then(res => {
       this.setData({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
@@ -36,26 +36,26 @@ Page({
         })
       })
     })
-    /**
-     * 获取管理员身份校验
-     */
-    let is_admin = false;
-    
-    /**
-     * 调用云函数检查用户身份
-     */
-    let result = wx.cloud.callFunction({
-      name: "checkUserAuth"
-    }).then(res => {
-      this.setData({
-        is_admin: res.result.data.is_administrator
-      })
-    })
+
   },
 
-  viewAll:function(){
+  viewAll: function() {
     wx.navigateTo({
       url: '../list/list',
+    })
+  },
+  adminLogin: function() {
+    wx.cloud.callFunction({
+      name: 'checkUserAuth'
+    }).then(res => {
+      if (res.result.data.is_administrator) {
+        
+      } else {
+        wx.showToast({
+          title: '您不是管理员，无法进入管理入口！',
+          icon: 'none'
+        });
+      }
     })
   },
   /**
@@ -63,9 +63,9 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: '我在'+config.appName+'上发现了好吃的，你也看看吧！',
+      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
       path: '/pages/map/map?_mta_ref_id=group',
-      imageUrl:"/images/share.jpg"
+      imageUrl: "/images/share.jpg"
     }
   }
 })
