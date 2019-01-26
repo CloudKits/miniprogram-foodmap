@@ -17,5 +17,7 @@
   <textarea placeholder='你为大家推荐什么菜呢？' name="notes" value="{{notes}}"></textarea>
   <view class='desc'>评分（10分制）</view>
   <slider min="1" max="10" show-value name="star"></slider>
+  <view class='desc'>美食照片</view>
+  <button bindtap='uploadImage'>点我选择照片</button>
   <button class='submit' type="primary" form-type='submit'>创建</button>
 </form>

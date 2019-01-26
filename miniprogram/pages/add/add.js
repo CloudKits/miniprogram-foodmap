@@ -43,7 +43,8 @@ Page({
         latitude: this.data.latitude,
         label:{
           content:value.title
-        }
+        },
+        images: this.data.images
       }
     }).then(res => {
       wx.hideLoading();
@@ -55,6 +56,30 @@ Page({
       })
     }).catch(error => {
       console.error(error);
+    })
+  },
+  uploadImage:function(e){
+    wx.chooseImage({
+      count:9,
+      success: res => {
+        let img_array = [];
+        console.log(res);
+        for(let i = 0;i < res.tempFilePaths.length; i++){
+          wx.cloud.uploadFile({
+            cloudPath: `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}.png`,
+            filePath: res.tempFilePaths[i]
+          }).then(res => {
+            img_array.push(res.fileID)
+          })
+        }
+        this.setData({
+          images: img_array
+        },res => {
+          wx.showToast({
+            title: '图片上传成功!',
+          });
+        })
+      }
     })
   }
 })
