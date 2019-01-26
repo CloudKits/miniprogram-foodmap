@@ -25,6 +25,11 @@ Page({
     })
     mta.Page.init();
     store.get().then(res => {
+      let data = res.data;
+      // 将 _id 给 id ,确保 marker 事件的正确触发
+      data.map(item => {
+        item.id = item._id
+      });
       this.setData({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
@@ -82,5 +87,10 @@ Page({
       path: '/pages/map/map?_mta_ref_id=group',
       imageUrl: "/images/share.jpg"
     }
+  },
+  onMarkerTap:function(event){
+    wx.navigateTo({
+      url: '../info/info?id=' + event.markerId,
+    })
   }
 })
