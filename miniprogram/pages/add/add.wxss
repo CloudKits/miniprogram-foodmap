@@ -17,7 +17,7 @@ input{
 textarea{
   background-color: #fff;
   padding: 20rpx;
-  width:  750rpx;
+  width:  710rpx;
 }
 .submit{
   margin-top: 40rpx;

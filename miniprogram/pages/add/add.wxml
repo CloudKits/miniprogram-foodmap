@@ -1,8 +1,7 @@
 <form report-submit='true' onsubmit="createItem">
   <view class='desc'>位置设定</view>
   <view class="loactionGroup">
-    <button bindtap='chooseLocation' size='mini' type='primary'>地图选址</button>
-    <button bindtap='getMyLocation' size='mini'>当前地址</button>
+    <button bindtap='chooseLocation' type='primary'>地图选址</button>
   </view>
   <view class='desc'>名称设定</view>
   <input placeholder='请输入店铺的名称' name="title" value='{{name}}'></input>

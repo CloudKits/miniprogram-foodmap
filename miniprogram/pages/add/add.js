@@ -29,22 +29,10 @@ Page({
       }
     })
   },
-  getMyLocation:function(event){
-    wx.getLocation({
-      success: res => {
-        this.setData({
-          latitude: res.latitude,
-          longitude: res.longitude,
-        },res => {
-          wx.showToast({
-            title: '位置获取成功',
-            icon:"success"
-          })
-        })
-      }
-    })
-  },
   createItem:function(event){
+    wx.showLoading({
+      title: '上传数据中...',
+    })
     let value = event.detail.value
     store.add({
       data:{
@@ -58,6 +46,7 @@ Page({
         }
       }
     }).then(res => {
+      wx.hideLoading();
       wx.showToast({
         title: '创建成功！',
         icon:'success'
