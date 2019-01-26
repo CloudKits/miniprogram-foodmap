@@ -1,7 +1,7 @@
 <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}">
   <block wx:for="{{store.images}}">
     <swiper-item>
-      <image src="{{item}}" data-url="{{item}}" class="slide-image" mode="aspectFit" bindtap="tapImage"/>
+      <image src="{{item}}" data-url="{{item}}" class="slide-image" mode="aspectFit" bindtap="tapImage" />
     </swiper-item>
   </block>
 </swiper>
@@ -12,5 +12,12 @@
 
   <view class="address">{{store.address}}</view>
 
+  <view class="star">评分: {{store.star}}/10</view>
+  <view class="keywords">关键词: {{store.keywords}}</view>
+  <view class="notes">点评: {{store.notes}}</view>
+
+  <view class="per">人均消费 {{store.price_per}}元</view>
+
   <view class="thumbs_up">{{store.thumbs_up}}</view>
+
 </view>

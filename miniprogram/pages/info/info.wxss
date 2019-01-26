@@ -5,7 +5,18 @@
 .contact {
   padding: 20rpx;
 }
-
+.star{
+  padding: 20rpx;
+}
+.keywords{
+  padding: 20rpx;
+}
+.notes{
+  padding: 20rpx;
+}
+.per{
+  padding: 20rpx;
+}
 .address {
   padding: 20rpx;
 }
