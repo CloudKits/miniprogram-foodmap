@@ -1,3 +1,4 @@
+@import "vendor/fontawesome.wxss";
 .button {
   color: #fff;
   height: 100rpx;

@@ -6,18 +6,23 @@
   </block>
 </swiper>
 <view>
-  <view class="title">{{store.title}}</view>
+  <view class="title">
+    <text class="icon fa-cutlery"></text>{{store.title}}</view>
+  <view class="contact">
+    <text class="icon fa-phone"></text>{{store.contact}}</view>
 
-  <view class="contact">{{store.contact}}</view>
+  <view class="address">
+    <text class="icon fa-map"></text>{{store.address}}</view>
 
-  <view class="address">{{store.address}}</view>
-
-  <view class="star">评分: {{store.star}}/10</view>
-  <view class="keywords">关键词: {{store.keywords}}</view>
-  <view class="notes">点评: {{store.notes}}</view>
-
-  <view class="per">人均消费 {{store.price_per}}元</view>
-
-  <view class="thumbs_up">{{store.thumbs_up}}</view>
+  <view class="star">
+    <text class="icon fa-star"></text>评分: {{store.star}}/10</view>
+  <view class="keywords">
+    <text class="icon fa-tag"></text>关键词: {{store.keywords}}</view>
+  <view class="notes">
+    <text class="icon fa-comment"></text>点评: {{store.notes}}</view>
+  <view class="per">
+    <text class="icon fa-money"></text>人均消费 {{store.price_per}}元</view>
+  <view class="thumbs_up">
+    <text class="icon fa-thumbs-up"></text>{{store.thumbs_up}}</view>
 
 </view>

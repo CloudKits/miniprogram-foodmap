@@ -1,0 +1,39 @@
+.icon {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  margin-right: 10rpx;
+}
+
+.fa-phone:before {
+  content: "\f095";
+}
+
+.fa-map:before {
+  content: "\f041";
+}
+
+.fa-star:before {
+  content: "\f005";
+}
+
+.fa-money:before {
+  content: "\f0d6";
+}
+
+.fa-comment:before {
+  content: "\f075";
+}
+
+.fa-thumbs-up:before {
+  content: "\f164";
+}
+
+.fa-tag:before {
+  content: "\f02b";
+}
+
+.fa-cutlery:before {
+  content: "\f0f5";
+}
