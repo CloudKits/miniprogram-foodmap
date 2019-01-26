@@ -1,0 +1,26 @@
+.slide-image {
+  width: 750rpx;
+}
+
+.contact {
+  padding: 20rpx;
+}
+
+.address {
+  padding: 20rpx;
+}
+.address::before{
+  content: "地址: "
+}
+
+.thumbs_up {
+  padding: 20rpx;
+}
+.thumbs_up::before{
+  content: "点赞人数: ";
+}
+
+.title {
+  padding: 20rpx;
+  font-size: 50rpx;
+}

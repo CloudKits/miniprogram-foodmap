@@ -30,13 +30,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "全部内容",
 					"pathName": "pages/list/list",
 					"query": ""
+				},
+				{
+					"id": 1,
+					"name": "商铺详情",
+					"pathName": "pages/info/info",
+					"query": "id=XEWa01sqTi00tl0Q"
 				}
 			]
 		}

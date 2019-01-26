@@ -1,0 +1,16 @@
+<swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}">
+  <block wx:for="{{store.images}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode="aspectFit" />
+    </swiper-item>
+  </block>
+</swiper>
+<view>
+  <view class="title">{{store.title}}</view>
+
+  <view class="contact">{{store.contact}}</view>
+
+  <view class="address">{{store.address}}</view>
+
+  <view class="thumbs_up">{{store.thumbs_up}}</view>
+</view>
