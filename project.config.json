@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -43,6 +43,12 @@
 					"name": "商铺详情",
 					"pathName": "pages/info/info",
 					"query": "id=XEWa01sqTi00tl0Q"
+				},
+				{
+					"id": -1,
+					"name": "新增数据",
+					"pathName": "pages/add/add",
+					"query": ""
 				}
 			]
 		}

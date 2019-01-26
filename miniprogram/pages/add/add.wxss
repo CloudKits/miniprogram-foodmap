@@ -1,0 +1,24 @@
+page{
+  background-color: #eee;
+}
+
+.desc{
+  padding: 20rpx;
+}
+.loactionGroup{
+  padding: 10rpx;
+  display: flex;
+  flex-direction: row;
+}
+input{
+  background-color: #fff;
+  padding: 20rpx;
+}
+textarea{
+  background-color: #fff;
+  padding: 20rpx;
+  width:  750rpx;
+}
+.submit{
+  margin-top: 40rpx;
+}
