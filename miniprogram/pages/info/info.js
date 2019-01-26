@@ -38,5 +38,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  callContact:function(event){
+    wx.makePhoneCall({
+      phoneNumber: this.data.store.contact
+    })
   }
 })
