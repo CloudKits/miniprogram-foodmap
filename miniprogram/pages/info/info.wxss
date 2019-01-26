@@ -5,18 +5,23 @@
 .contact {
   padding: 20rpx;
 }
-.star{
+
+.star {
   padding: 20rpx;
 }
-.keywords{
+
+.keywords {
   padding: 20rpx;
 }
-.notes{
+
+.notes {
   padding: 20rpx;
 }
-.per{
+
+.per {
   padding: 20rpx;
 }
+
 .address {
   padding: 20rpx;
 }
@@ -24,11 +29,19 @@
 .thumbs_up {
   padding: 20rpx;
 }
+
 .title {
   padding: 20rpx;
   font-size: 50rpx;
 }
-swiper{
+
+swiper {
   height: 240px;
   background-color: #eee;
+}
+
+.two_column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

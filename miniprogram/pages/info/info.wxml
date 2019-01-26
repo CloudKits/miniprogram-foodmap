@@ -7,22 +7,26 @@
 </swiper>
 <view>
   <view class="title">
-    <text class="icon fa-cutlery"></text>{{store.title}}</view>
-  <view class="contact">
-    <text class="icon fa-phone"></text>{{store.contact}}</view>
+    <text class="icon fa-cutlery"></text>{{store.title}}
+  </view>
+  <view class="two_column">
+    <view class="contact" bindtap='callContact'>
+      <text class="icon fa-phone"></text>{{store.contact}}</view>
+    <view class="star">
+      <text class="icon fa-star"></text>评分: {{store.star}}/10</view>
+  </view>
+  <view class="two_column">
+    <view class="per">
+      <text class="icon fa-money"></text>人均: {{store.price_per}}元</view>
+    <view class="keywords">
+      <text class="icon fa-tag"></text>关键词: {{store.keywords}}</view>
+  </view>
 
   <view class="address">
     <text class="icon fa-map"></text>{{store.address}}</view>
-
-  <view class="star">
-    <text class="icon fa-star"></text>评分: {{store.star}}/10</view>
-  <view class="keywords">
-    <text class="icon fa-tag"></text>关键词: {{store.keywords}}</view>
-  <view class="notes">
-    <text class="icon fa-comment"></text>点评: {{store.notes}}</view>
-  <view class="per">
-    <text class="icon fa-money"></text>人均消费 {{store.price_per}}元</view>
   <view class="thumbs_up">
     <text class="icon fa-thumbs-up"></text>{{store.thumbs_up}}</view>
+  <view class="notes">
+    <text class="icon fa-comment"></text>点评: {{store.notes}}</view>
 
 </view>
