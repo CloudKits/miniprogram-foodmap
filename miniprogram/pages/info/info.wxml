@@ -1,7 +1,7 @@
 <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}">
   <block wx:for="{{store.images}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image" mode="aspectFit" />
+      <image src="{{item}}" data-url="{{item}}" class="slide-image" mode="aspectFit" bindtap="tapImage"/>
     </swiper-item>
   </block>
 </swiper>
