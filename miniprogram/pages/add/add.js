@@ -50,9 +50,11 @@ Page({
       wx.hideLoading();
       wx.showToast({
         title: '创建成功！',
-        icon:'success'
-      },res => {
-        wx.navigateBack({});
+        icon:'success',
+        success:res => {
+          wx.navigateBack({
+          })
+        }
       })
     }).catch(error => {
       console.error(error);
