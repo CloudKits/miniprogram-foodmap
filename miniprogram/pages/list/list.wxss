@@ -17,13 +17,12 @@
 .card_address{
   font-size: 30rpx;
   font-weight: 300;
+  width: 600rpx;
+  overflow: hidden;
+  white-space:nowrap;
 }
 .card_thumbsup{
   font-size: 30rpx;
   font-weight: 700;
   
-}
-.card_thumbsup::after{
-  content: "人点赞";
-  font-weight: 300;
 }
