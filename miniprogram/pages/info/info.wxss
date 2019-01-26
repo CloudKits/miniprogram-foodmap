@@ -24,3 +24,7 @@
   padding: 20rpx;
   font-size: 50rpx;
 }
+swiper{
+  height: 240px;
+  background-color: #eee;
+}
