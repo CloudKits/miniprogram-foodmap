@@ -65,22 +65,24 @@ Page({
       count:9,
       success: res => {
         let img_array = [];
-        console.log(res);
         for(let i = 0;i < res.tempFilePaths.length; i++){
+          wx.showLoading({
+            title: parseInt(i+1) + '/' + res.tempFilePaths.length,
+          })
           wx.cloud.uploadFile({
             cloudPath: `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}.png`,
             filePath: res.tempFilePaths[i]
           }).then(res => {
-            img_array.push(res.fileID)
+            img_array.push(res.fileID);
+            this.setData({
+              images: img_array
+            },res => {
+              wx.showToast({
+                title: '图片上传完成',
+              })
+            })
           })
         }
-        this.setData({
-          images: img_array
-        },res => {
-          wx.showToast({
-            title: '图片上传成功!',
-          });
-        })
       }
     })
   }
