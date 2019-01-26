@@ -10,8 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    longitude: 113.947608,
-    latitude: 22.528687,
+    longitude: config.center_longitude,
+    latitude: config.center_latitude,
     windowHeight: 600,
     mapSubKey: config.mapSubKey
   },
