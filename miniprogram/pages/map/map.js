@@ -49,7 +49,22 @@ Page({
       name: 'checkUserAuth'
     }).then(res => {
       if (res.result.data.is_administrator) {
-        
+        wx.showModal({
+          title: '管理员登陆成功',
+          content: '管理员您好，是否要进入新增界面？',
+          success: res => {
+            if(res.cancel == false && res.confirm == true){
+              wx.navigateTo({
+                url: '../add/add',
+              })
+            }else{
+              wx.showToast({
+                title: '您可以点击下方查看全部按钮管理已有数据',
+                icon: 'none'
+              });
+            }
+          }
+        })
       } else {
         wx.showToast({
           title: '您不是管理员，无法进入管理入口！',
