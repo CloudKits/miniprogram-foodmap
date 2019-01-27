@@ -18,7 +18,7 @@ Page({
   onLoad: function(options) {
     wx.loadFontFace({
       family: "iconfont",
-      source: "https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf"
+      source: "https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff"
     });
     mta.Page.init();
     this.loadData();
