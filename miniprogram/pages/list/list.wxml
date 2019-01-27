@@ -3,8 +3,8 @@
     <view class="card">
       <view class="card_title">{{item.title}}</view>
       <view class="card_infobar">
-        <view class="card_address"><text class="icon fa-map"></text>{{item.address}}</view>
-        <view class="card_thumbsup"><text class="icon fa-thumbs-up"></text>{{item.thumbs_up}}</view>
+        <view class="card_address">{{item.address}}</view>
+        <view class="card_thumbsup">{{item.thumbs_up}}</view>
       </view>
     </view>
   </navigator>

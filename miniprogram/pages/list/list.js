@@ -16,10 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    wx.loadFontFace({
-      family: "iconfont",
-      source: "https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff"
-    });
+   
     mta.Page.init();
     this.loadData();
   },

@@ -18,16 +18,6 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    wx.loadFontFace({
-      family:"iconfont",
-      source:"https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff",
-      success:res => {
-        console.log(res);
-      },
-      fail:err => {
-        console.error(err);
-      }
-    })
     mta.Page.init();
     store.doc(options.id).get().then(res => {
       this.setData({
