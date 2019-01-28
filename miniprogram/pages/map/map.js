@@ -92,5 +92,19 @@ Page({
     wx.navigateTo({
       url: '../info/info?id=' + event.markerId,
     })
+  },
+  getOpenID:function(event){
+    wx.cloud.callFunction({
+      name:"getUserOpenId"
+    }).then(res => {
+      wx.setClipboardData({
+        data: res.result.openid,
+        success:res => {
+          wx.showToast({
+            title: 'openID已复制',
+          })
+        }
+      })
+    })
   }
 })
