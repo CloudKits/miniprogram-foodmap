@@ -27,4 +27,12 @@
   <view class="notes">
     点评: {{store.notes}}</view>
 </view>
+
+<block wx:if="{{is_administrator}}">
 <button class='button copy_path' bindtap='copyPath'>复制路径</button>
+</block>
+<block wx:else>
+<view class="navigateBox">
+<button class='button navigate' bindtap='navigate'>导航</button>
+</view>
+</block>

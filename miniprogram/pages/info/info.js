@@ -80,5 +80,13 @@ Page({
     wx.makePhoneCall({
       phoneNumber: this.data.store.contact
     })
+  },
+  navigate:function(e){
+    wx.openLocation({
+      latitude: this.data.store.latitude,
+      longitude: this.data.store.longitude,
+      name: this.data.store.title,
+      address: this.data.store.address
+    })
   }
 })

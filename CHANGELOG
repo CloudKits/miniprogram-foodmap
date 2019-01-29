@@ -3,5 +3,6 @@
 2. 使用环境变量设置管理员身份 #8 @bestony docs: https://github.com/CloudKits/miniprogram-foodmap/wiki/Administrator
 3. 修复了添加新店铺数据后，地图页面不更新的问题。 #10 @bestony
 4. 添加了详情页面的复制路径的按钮 #7 @bestony
+5. 添加了店铺的导航功能
 == 2019.01.28 alpha ==
 1. 发布 alpha 版本
