@@ -109,9 +109,6 @@ Page({
         icon: 'none'
       });
     }
-    if (e.detail.errMsg === 'getUserInfo:fail auth deny'){
-
-    }
   },
   /**
    * 用户点击右上角分享
