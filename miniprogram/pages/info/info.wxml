@@ -30,6 +30,7 @@
 
 <block wx:if="{{is_administrator}}">
 <button class='button copy_path' bindtap='copyPath'>复制路径</button>
+<button class='button delete_item' bindtap='deleteItem'>删除店铺</button>
 </block>
 <block wx:else>
 <view class="navigateBox">

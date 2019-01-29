@@ -88,5 +88,32 @@ Page({
       name: this.data.store.title,
       address: this.data.store.address
     })
+  },
+  deleteItem:function(e){
+    wx.showModal({
+      title: '删除确认',
+      content: '您真的要删除' + this.data.store.title + "么？",
+      success: res => {
+        if (res.confirm) {
+          store.doc(this.data.store._id).remove().then(res => {
+            wx.showToast({
+              title: '删除成功',
+              icon:'success',
+              success:res => {
+                wx.navigateBack({
+                  delta: 2
+                })
+              }
+            })
+          }).cathc(error => {
+            wx.showToast({
+              title: '删除失败！请添加微信 ixiqin_com 排查问题',
+            })
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   }
 })
