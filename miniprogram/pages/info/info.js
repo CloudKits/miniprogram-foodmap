@@ -45,7 +45,6 @@ Page({
       wx.cloud.getTempFileURL({
         fileList: [this.data.store.images[0]],
         success: res =>{
-          // console.log(res.fileList[0].tempFileURL)
           return {
             title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
             path: path,
