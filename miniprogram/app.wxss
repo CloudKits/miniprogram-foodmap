@@ -4,6 +4,7 @@
   height: 100rpx;
   width: 220rpx;
   line-height: 100rpx;
+  font-size: 35rpx;
   text-align: center;
   background-color: rgb(62, 207, 142);
   border-radius: 50rpx;
