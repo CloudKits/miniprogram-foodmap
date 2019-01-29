@@ -44,6 +44,19 @@ Page({
 
   },
 
+  onShow:function(){
+    // #10 添加完成后更新一下 map
+    store.get().then(res => {
+      let data = res.data;
+      data.map(item => {
+        item.id = item._id
+      });
+      this.setData({
+        stores: res.data
+      })
+    })
+  },
+
   viewAll: function() {
     wx.navigateTo({
       url: '../list/list',
