@@ -27,3 +27,4 @@
   <view class="notes">
     点评: {{store.notes}}</view>
 </view>
+<button class='button copy_path' bindtap='copyPath'>复制路径</button>

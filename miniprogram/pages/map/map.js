@@ -67,6 +67,7 @@ Page({
       name: 'checkUserAuth'
     }).then(res => {
       if (res.result.data.is_administrator) {
+        app.globalData.is_administrator = true;
         wx.showModal({
           title: '管理员登陆成功',
           content: '管理员您好，是否要进入新增界面？',

@@ -22,7 +22,8 @@ Page({
     mta.Page.init();
     store.doc(options.id).get().then(res => {
       this.setData({
-        store: res.data
+        store: res.data,
+        is_administrator: app.globalData.is_administrator
       },res => {
         wx.hideLoading();
       })
@@ -34,7 +35,18 @@ Page({
       current: e.currentTarget.dataset.url
     })
   },
-
+  copyPath:function(e){
+    let path = this.route + "?id="+ this.data.store._id
+    wx.setClipboardData({
+      data: path,
+      success: res => {
+        wx.showToast({
+          title: '路径复制成功',
+          icon:"success"
+        })
+      }
+    })
+  },
   /**
    * 用户点击右上角分享
    */

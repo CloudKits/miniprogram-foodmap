@@ -28,6 +28,6 @@ App({
      */
     let { windowHeight } = wx.getSystemInfoSync();
 
-    this.globalData = { windowHeight }
+    this.globalData = { windowHeight, is_administrator:false }
   }
 })
