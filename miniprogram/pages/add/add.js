@@ -18,16 +18,33 @@ Page({
     mta.Page.init();
   },
   chooseLocation: function (event) {
-    wx.chooseLocation({
+    wx.getSetting({
       success: res => {
-        this.setData({
-          address: res.address,
-          latitude: res.latitude,
-          longitude: res.longitude,
-          name: res.name
-        })
+        if (!res.authSetting['scope.userLocation']){
+          wx.showModal({
+            title: '授权失败',
+            content: '您尚未授权获取您的地理位置，是否开启授权界面？',
+            success: res => {
+              if (res.confirm){
+                wx.openSetting({})
+              }
+            }
+          })
+        }else{
+          wx.chooseLocation({
+            success: res => {
+              this.setData({
+                address: res.address,
+                latitude: res.latitude,
+                longitude: res.longitude,
+                name: res.name
+              })
+            }
+          })
+        }
       }
     })
+    
   },
   createItem: function (event) {
     wx.showLoading({
