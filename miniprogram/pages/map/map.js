@@ -3,6 +3,7 @@ const app = getApp();
 const config = require('../../config.js');
 const db = wx.cloud.database()
 const store = db.collection('store');
+const userInfo = db.collection('userInfo');
 
 Page({
 
@@ -13,7 +14,7 @@ Page({
     longitude: config.center_longitude,
     latitude: config.center_latitude,
     windowHeight: 600,
-    mapSubKey: config.mapSubKey
+    mapSubKey: config.mapSubKey,
   },
 
   /**
@@ -62,35 +63,55 @@ Page({
       url: '../list/list',
     })
   },
-  adminLogin: function() {
-    wx.cloud.callFunction({
-      name: 'checkUserAuth'
-    }).then(res => {
-      if (res.result.data.is_administrator) {
-        app.globalData.is_administrator = true;
-        wx.showModal({
-          title: '管理员登陆成功',
-          content: '管理员您好，是否要进入新增界面？',
-          success: res => {
-            if(res.cancel == false && res.confirm == true){
-              wx.navigateTo({
-                url: '../add/add',
-              })
-            }else{
-              wx.showToast({
-                title: '您可以点击下方查看全部按钮管理已有数据',
-                icon: 'none'
-              });
-            }
+  getUserInfo:function(e){
+    if (e.detail.userInfo){
+      userInfo.get({
+        success:res => {
+          if (!res.data.length){
+            userInfo.add({
+              data: e.detail.userInfo
+            });
           }
-        })
-      } else {
-        wx.showToast({
-          title: '您不是管理员，无法进入管理入口！',
-          icon: 'none'
-        });
-      }
-    })
+        }
+      })
+      
+      wx.cloud.callFunction({
+        name: 'checkUserAuth'
+      }).then(res => {
+        if (res.result.data.is_administrator) {
+          app.globalData.is_administrator = true;
+          wx.showModal({
+            title: '管理员登陆成功',
+            content: '管理员您好，是否要进入新增界面？',
+            success: res => {
+              if (res.cancel == false && res.confirm == true) {
+                wx.navigateTo({
+                  url: '../add/add',
+                })
+              } else {
+                wx.showToast({
+                  title: '您可以点击下方查看全部按钮管理已有数据',
+                  icon: 'none'
+                });
+              }
+            }
+          })
+        } else {
+          wx.showToast({
+            title: '您不是管理员，无法进入管理入口！',
+            icon: 'none'
+          });
+        }
+      })
+    }else{
+      wx.showToast({
+        title: '未授权情况下无法进入管理模式',
+        icon: 'none'
+      });
+    }
+    if (e.detail.errMsg === 'getUserInfo:fail auth deny'){
+
+    }
   },
   /**
    * 用户点击右上角分享
