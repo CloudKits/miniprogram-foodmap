@@ -1,2 +1,5 @@
+== 2019.01.29 alpha-0129 ==
+1. 分享时如果可以获取到云文件的路径，就使用云文件路径 #6 @bestony
+2. 使用环境变量设置管理员身份 #8 @bestony docs: https://github.com/CloudKits/miniprogram-foodmap/wiki/Administrator
 == 2019.01.28 alpha ==
 1. 发布 alpha 版本
