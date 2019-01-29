@@ -33,6 +33,10 @@
 
 请查看 [依赖服务说明](https://github.com/CloudKits/miniprogram-foodmap/wiki/Service)
 
+## FAQ
+
+常见问题请参看 [FAQ](https://github.com/CloudKits/miniprogram-foodmap/wiki/FAQ)
+
 ## 贡献说明
 
 欢迎您为项目提交 Pull Request；如果您在使用中有任何问题或有新的特性需求，请前往[ISSUE](https://github.com/CloudKits/miniprogram-foodmap/issues)提交新的 issue。
