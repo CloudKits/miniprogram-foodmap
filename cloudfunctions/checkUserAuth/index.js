@@ -5,11 +5,8 @@ cloud.init()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const wxContext = cloud.getWXContext()
-
-  const administrator = [
-    "ocdyO4u6-0Gf92PZUWAsEK4LxkuI"
-  ];
+  const wxContext = cloud.getWXContext()  
+  const administrator = process.env.ADMIN.split('|');
 
   if (administrator.indexOf(wxContext.OPENID) == -1){
     return {
