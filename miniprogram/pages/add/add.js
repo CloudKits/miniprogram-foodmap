@@ -21,13 +21,19 @@ Page({
     wx.getSetting({
       success: res => {
         if (!res.authSetting['scope.userLocation']){
-          wx.showModal({
-            title: '授权失败',
-            content: '您尚未授权获取您的地理位置，是否开启授权界面？',
-            success: res => {
-              if (res.confirm){
-                wx.openSetting({})
-              }
+          wx.authorize({
+            scope: 'scope.userLocation',
+            success:res => {
+              wx.chooseLocation({
+                success: res => {
+                  this.setData({
+                    address: res.address,
+                    latitude: res.latitude,
+                    longitude: res.longitude,
+                    name: res.name
+                  })
+                }
+              })
             }
           })
         }else{
