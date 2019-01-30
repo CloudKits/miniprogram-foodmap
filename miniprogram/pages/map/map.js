@@ -16,17 +16,14 @@ Page({
     windowHeight: 600,
     mapSubKey: config.mapSubKey,
     hideMe:true,
-    hideAdmin:true,
+    showAdmin:false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let hideAdmin = false;
-    if (config.hide_admin){
-      hideAdmin = true
-    }
+    let showAdmin = config.showAdmin?true:false;
     wx.showLoading({
       title: '数据加载中...',
     })
@@ -41,7 +38,7 @@ Page({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
         hideMe:false,
-        hideAdmin:hideAdmin
+        showAdmin: showAdmin
       }, () => {
         wx.hideLoading();
         wx.showToast({
@@ -157,7 +154,7 @@ Page({
   },
   showAdmin:function(res){
     this.setData({
-      hideAdmin:false
+      showAdmin:true
     })
   }
 })

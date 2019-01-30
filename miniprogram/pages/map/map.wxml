@@ -1,5 +1,5 @@
 <map id="map" scale="16" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px' markers="{{stores}}" subkey="{{mapSubKey}}" show-compass="{{true}}" bindmarkertap="onMarkerTap">
-  <cover-view class="cover" wx:if="{{!hideAdmin}}">
+  <cover-view class="cover" wx:if="{{showAdmin}}">
     <button class='button' open-type='getUserInfo' bindgetuserinfo='getUserInfo' bindlongpress='getOpenID' lang='zh_CN'>管理入口</button>
   </cover-view>
   <cover-view class="button show_all" bindtap="viewAll" bindlongpress='showAdmin'>查看全部</cover-view>

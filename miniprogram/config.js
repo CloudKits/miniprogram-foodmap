@@ -7,5 +7,5 @@ module.exports = {
   "center_longitude": 113.921736,
   "center_latitude": 22.538017,
   "dynamic_title":true,
-  "hide_admin":true
+  "showAdmin":false
 }
