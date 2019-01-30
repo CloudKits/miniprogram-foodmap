@@ -27,7 +27,7 @@ App({
      * 获取屏幕高度
      */
     let { windowHeight } = wx.getSystemInfoSync();
-
-    this.globalData = { windowHeight, is_administrator:false }
+    let showAdmin = wx.getStorageSync('showAdmin');
+    this.globalData = { windowHeight, is_administrator: false, showAdmin: showAdmin}
   }
 })

@@ -23,7 +23,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     let showAdmin = config.show_admin?true:false;
+
+    if (app.globalData.showAdmin) {
+      showAdmin = true;
+    }
+
     wx.showLoading({
       title: '数据加载中...',
     })
@@ -153,6 +159,10 @@ Page({
     })
   },
   showAdmin:function(res){
+    wx.setStorage({
+      key: 'showAdmin',
+      data: true,
+    })
     this.setData({
       showAdmin:true
     })
