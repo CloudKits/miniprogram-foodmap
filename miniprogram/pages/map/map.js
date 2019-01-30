@@ -64,65 +64,54 @@ Page({
     })
   },
   getUserInfo: function (e) {
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            lang: 'zh_CN',
-            withCredentials: false,
-            success: res => {
-              userInfo.get({
-                success: res => {
-                  if (!res.data.length) {
-                    userInfo.add({
-                      data: res.userInfo
-                    })
-                  }
-                }
-              })
-            }
-          })
-          wx.cloud.callFunction({
-            name: 'checkUserAuth'
-          }).then(res => {
-            if (res.result.data.is_administrator) {
-              app.globalData.is_administrator = true;
-              wx.showModal({
-                title: '管理员登陆成功',
-                content: '管理员您好，是否要进入新增界面？',
-                success: res => {
-                  if (res.cancel == false && res.confirm == true) {
-                    wx.navigateTo({
-                      url: '../add/add',
-                    })
-                  } else {
-                    wx.showToast({
-                      title: '您可以点击下方查看全部按钮管理已有数据',
-                      icon: 'none'
-                    });
-                  }
-                }
-              })
-            } else {
-              wx.showToast({
-                title: '您不是管理员，无法进入管理入口！',
-                icon: 'none'
-              });
-            }
-          })
-        } else {
-          wx.showModal({
-            title: '授权失败',
-            content: '您尚未授权获取您的用户信息，是否开启授权界面？',
-            success: res => {
-              if (res.confirm) {
-                wx.openSetting({})
-              }
-            }
+    if (e.detail.userInfo){
+      userInfo.get().then( res => {
+        if (!res.data.length){
+          userInfo.add({
+            data: e.detail.userInfo
           })
         }
-      }
-    })
+        wx.cloud.callFunction({
+          name: 'checkUserAuth'
+        }).then(res => {
+          if (res.result.data.is_administrator) {
+            app.globalData.is_administrator = true;
+            wx.showModal({
+              title: '管理员登陆成功',
+              content: '管理员您好，是否要进入新增界面？',
+              success: res => {
+                if (res.cancel == false && res.confirm == true) {
+                  wx.navigateTo({
+                    url: '../add/add',
+                  })
+                } else {
+                  wx.showToast({
+                    title: '您可以点击下方查看全部按钮管理已有数据',
+                    icon: 'none'
+                  });
+                }
+              }
+            })
+          } else {
+            wx.showToast({
+              title: '您不是管理员，无法进入管理入口！',
+              icon: 'none'
+            });
+          }
+        })
+      })
+    }else{
+      // 处理未授权的场景
+      wx.showModal({
+        title: '授权失败',
+        content: '您尚未授权获取您的用户信息，是否开启授权界面？',
+        success: res => {
+          if (res.confirm) {
+            wx.openSetting({})
+          }
+        }
+      })
+    }
   },
   /**
    * 用户点击右上角分享
