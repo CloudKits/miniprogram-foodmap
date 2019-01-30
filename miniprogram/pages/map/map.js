@@ -20,7 +20,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
     wx.showLoading({
       title: '数据加载中...',
     })
@@ -45,7 +45,7 @@ Page({
 
   },
 
-  onShow:function(){
+  onShow: function () {
     // #10 添加完成后更新一下 map
     store.get().then(res => {
       let data = res.data;
@@ -58,80 +58,94 @@ Page({
     })
   },
 
-  viewAll: function() {
+  viewAll: function () {
     wx.navigateTo({
       url: '../list/list',
     })
   },
-  getUserInfo:function(e){
-    if (e.detail.userInfo){
-      userInfo.get({
-        success:res => {
-          if (!res.data.length){
-            userInfo.add({
-              data: e.detail.userInfo
-            });
-          }
-        }
-      })
-      
-      wx.cloud.callFunction({
-        name: 'checkUserAuth'
-      }).then(res => {
-        if (res.result.data.is_administrator) {
-          app.globalData.is_administrator = true;
-          wx.showModal({
-            title: '管理员登陆成功',
-            content: '管理员您好，是否要进入新增界面？',
+  getUserInfo: function (e) {
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            lang: 'zh_CN',
+            withCredentials: false,
             success: res => {
-              if (res.cancel == false && res.confirm == true) {
-                wx.navigateTo({
-                  url: '../add/add',
-                })
-              } else {
-                wx.showToast({
-                  title: '您可以点击下方查看全部按钮管理已有数据',
-                  icon: 'none'
-                });
-              }
+              userInfo.get({
+                success: res => {
+                  if (!res.data.length) {
+                    userInfo.add({
+                      data: res.userInfo
+                    })
+                  }
+                }
+              })
+            }
+          })
+          wx.cloud.callFunction({
+            name: 'checkUserAuth'
+          }).then(res => {
+            if (res.result.data.is_administrator) {
+              app.globalData.is_administrator = true;
+              wx.showModal({
+                title: '管理员登陆成功',
+                content: '管理员您好，是否要进入新增界面？',
+                success: res => {
+                  if (res.cancel == false && res.confirm == true) {
+                    wx.navigateTo({
+                      url: '../add/add',
+                    })
+                  } else {
+                    wx.showToast({
+                      title: '您可以点击下方查看全部按钮管理已有数据',
+                      icon: 'none'
+                    });
+                  }
+                }
+              })
+            } else {
+              wx.showToast({
+                title: '您不是管理员，无法进入管理入口！',
+                icon: 'none'
+              });
             }
           })
         } else {
-          wx.showToast({
-            title: '您不是管理员，无法进入管理入口！',
-            icon: 'none'
-          });
+          wx.showModal({
+            title: '授权失败',
+            content: '您尚未授权获取您的用户信息，是否开启授权界面？',
+            success: res => {
+              if (res.confirm) {
+                wx.openSetting({})
+              }
+            }
+          })
         }
-      })
-    }else{
-      wx.showToast({
-        title: '未授权情况下无法进入管理模式',
-        icon: 'none'
-      });
-    }
+      }
+    })
   },
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
     return {
       title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
       path: '/pages/map/map?_mta_ref_id=group',
       imageUrl: "/images/share.jpg"
     }
   },
-  onMarkerTap:function(event){
+  onMarkerTap: function (event) {
     wx.navigateTo({
       url: '../info/info?id=' + event.markerId,
     })
   },
-  getOpenID:function(event){
+  getOpenID: function (event) {
     wx.cloud.callFunction({
-      name:"getUserOpenId"
+      name: "getUserOpenId"
     }).then(res => {
       wx.setClipboardData({
         data: res.result.openid,
-        success:res => {
+        success: res => {
           wx.showToast({
             title: 'openID已复制',
           })
