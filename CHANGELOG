@@ -1,6 +1,7 @@
 == 2019.01.30 alpha-0130 == 
 1. F 修复了由于 cover-view 丢失样式导致的按钮丢失的问题
 2. A 添加了地图界面的「添加我到小程序」的提醒
+3. F 修复了由于没有添加授权导致无法获取用户地址的问题
 == 2019.01.29 alpha-0129 ==
 1. U 分享时如果可以获取到云文件的路径，就使用云文件路径 #6 @bestony
 2. U 使用环境变量设置管理员身份 #8 @bestony docs: https://github.com/CloudKits/miniprogram-foodmap/wiki/Administrator
