@@ -15,13 +15,18 @@ Page({
     latitude: config.center_latitude,
     windowHeight: 600,
     mapSubKey: config.mapSubKey,
-    hideMe:true
+    hideMe:true,
+    hideAdmin:true,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let hideAdmin = false;
+    if (config.hide_admin){
+      hideAdmin = true
+    }
     wx.showLoading({
       title: '数据加载中...',
     })
@@ -35,7 +40,8 @@ Page({
       this.setData({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
-        hideMe:false
+        hideMe:false,
+        hideAdmin:hideAdmin
       }, () => {
         wx.hideLoading();
         wx.showToast({
@@ -147,6 +153,11 @@ Page({
   hideMe:function(res){
     this.setData({
       hideMe: true
+    })
+  },
+  showAdmin:function(res){
+    this.setData({
+      hideAdmin:false
     })
   }
 })
