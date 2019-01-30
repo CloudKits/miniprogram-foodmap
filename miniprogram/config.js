@@ -6,4 +6,5 @@ module.exports = {
   "mapSubKey":"URTBZ-FLY64-OVLUX-XHH4A-5DOGO-YKFFP",
   "center_longitude": 113.921736,
   "center_latitude": 22.538017,
+  "dynamic_title":true
 }

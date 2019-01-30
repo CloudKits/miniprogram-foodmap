@@ -21,6 +21,11 @@ Page({
     })
     mta.Page.init();
     store.doc(options.id).get().then(res => {
+      if (config.dynamic_title){
+        wx.setNavigationBarTitle({
+          title: res.data.title,
+        });
+      }
       this.setData({
         store: res.data,
         is_administrator: app.globalData.is_administrator
