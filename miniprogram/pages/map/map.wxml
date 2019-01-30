@@ -3,4 +3,8 @@
     <button class='button' open-type='getUserInfo' bindgetuserinfo='getUserInfo' bindlongpress='getOpenID' lang='zh_CN'>管理入口</button>
   </cover-view>
   <cover-view class="button show_all" bindtap="viewAll">查看全部</cover-view>
+  <block wx:if="{{!hideMe}}">
+    <cover-view class="add_me" bindtap="hideMe">添加到【我的小程序】更快找到我</cover-view>
+    <cover-view class="up" bindtap="hideMe"></cover-view>
+  </block>
 </map>

@@ -22,3 +22,21 @@ map{
   border-radius: 50rpx;
   text-shadow: 0 1px 3px rgba(36,180,126,.4);
 }
+.add_me{
+  font-size:30rpx;
+  color: #fff;
+  background-color: rgb(62, 207, 142);
+  width: 430rpx;
+  padding:20rpx;
+  position: absolute;
+  right: 10rpx;
+  top:20rpx;
+}
+.up{
+  position: absolute;
+  right:150rpx;
+  top:5rpx;
+  border-right:20rpx solid transparent;
+	border-left:20rpx solid transparent;
+	border-bottom:20rpx solid rgb(62, 207, 142);
+}

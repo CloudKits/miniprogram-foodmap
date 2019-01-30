@@ -15,6 +15,7 @@ Page({
     latitude: config.center_latitude,
     windowHeight: 600,
     mapSubKey: config.mapSubKey,
+    hideMe:true
   },
 
   /**
@@ -34,6 +35,7 @@ Page({
       this.setData({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
+        hideMe:false
       }, () => {
         wx.hideLoading();
         wx.showToast({
@@ -140,6 +142,11 @@ Page({
           })
         }
       })
+    })
+  },
+  hideMe:function(res){
+    this.setData({
+      hideMe: true
     })
   }
 })
