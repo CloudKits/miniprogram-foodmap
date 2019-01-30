@@ -23,7 +23,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let showAdmin = config.showAdmin?true:false;
+    let showAdmin = config.show_admin?true:false;
     wx.showLoading({
       title: '数据加载中...',
     })
