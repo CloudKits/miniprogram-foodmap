@@ -9,7 +9,8 @@ Page({
    */
   data: {
     numbers: 0,
-    stores: []
+    stores: [],
+    focus:false
   },
 
   /**
@@ -17,6 +18,9 @@ Page({
    */
   onLoad: function (options) {
     mta.Page.init();
+    this.setData({
+      focus:true
+    })
   },
 
   /**

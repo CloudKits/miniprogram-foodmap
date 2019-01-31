@@ -1,5 +1,5 @@
 <view class="search_box">
-  <input class='search_input' type="text" confirm-type="search" placeholder="请输入要搜索的关键词" bindconfirm="search"></input>
+  <input class='search_input' type="text" confirm-type="search" placeholder="请输入要搜索的关键词" bindconfirm="search" focus='{{focus}}'></input>
 </view>
 <block wx:if="{{stores}}" wx:for="{{stores}}" wx:key="_id">
   <navigator url="../info/info?id={{item._id}}">
