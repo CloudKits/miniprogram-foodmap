@@ -10,7 +10,8 @@ Page({
   data: {
     numbers: 0,
     stores: [],
-    focus:false
+    focus:false,
+    searched:false
   },
 
   /**
@@ -43,11 +44,15 @@ Page({
        * 如果没有数据，就提示没有商户了，并返回。
        */
       if (res.data.length == 0) {
-        wx.showToast({
-          title: '没有您要找的店铺了哦',
-          icon: 'none'
-        });
-        return;
+        this.setData({
+          searched:true
+        },res => {
+          wx.showToast({
+            title: '没有您要找的店铺了哦',
+            icon: 'none'
+          });
+          return;
+        })
       }
       this.setData({
         stores: this.data.stores.concat(res.data),

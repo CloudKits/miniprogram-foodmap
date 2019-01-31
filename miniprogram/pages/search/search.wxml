@@ -11,6 +11,12 @@
     </view>
   </navigator>
 </block>
-<block wx:if="{{stores.length == 0}}">
+<block wx:if="{{stores.length == 0 && !searched}}">
   <view class="not_found">请点击上方搜索框输入要搜索的关键字</view>
+</block>
+<block wx:if="{{searched}}">
+  <view class="no_result_button">
+    没有找到想吃的美食？不妨去看看其他美食?
+    <navigator url="../list/list" open-type="redirect" class="button view_all">查看全部</navigator>
+  </view>
 </block>

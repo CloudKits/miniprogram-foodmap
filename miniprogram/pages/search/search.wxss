@@ -45,3 +45,15 @@ font-size: 80rpx;
   overflow: hidden;
   white-space:nowrap;
 }
+.no_result_button{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  height:700rpx;
+  width:750rpx;
+  align-items:center;
+  font-size: 30rpx;
+}
+.view_all{
+  margin-top: 40rpx;
+}
