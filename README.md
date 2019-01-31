@@ -28,7 +28,7 @@
 
 ## 截图
 
-![截图](https://postimg.aliavv.com/mweb/2019/01/28/%E6%9C%AA%E5%91%BD%E5%90%8D.jpg)
+![截图](https://postimg.aliavv.com/201810/miwgi.jpg)
 
 ## Demo 小程序
 
