@@ -26,6 +26,11 @@ Page({
           title: res.data.title,
         });
       }
+      // 两次切割以适配中英文逗号
+      let keywords_array = res.data.keywords.split(',').map(item => { return item.split('，') })
+      // 将数组压平
+      let keywords = [].concat.apply([], keywords_array);
+      res.data.keywords = keywords
       this.setData({
         store: res.data,
         is_administrator: app.globalData.is_administrator
