@@ -110,7 +110,7 @@ Page({
                 })
               }
             })
-          }).cathc(error => {
+          }).catch(error => {
             wx.showToast({
               title: '删除失败！请添加微信 ixiqin_com 排查问题',
             })
