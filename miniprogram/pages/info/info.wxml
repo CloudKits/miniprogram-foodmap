@@ -1,4 +1,4 @@
-<block wx:if="{{store.images.length != 0}}">
+<block wx:if="{{store.images}}">
 <swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{5000}}" duration="{{1000}}">
   <block wx:for="{{store.images}}">
     <swiper-item>
