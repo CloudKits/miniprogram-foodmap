@@ -161,10 +161,10 @@ Page({
   showAdmin:function(res){
     wx.setStorage({
       key: 'showAdmin',
-      data: true,
+      data: !this.data.showAdmin,
     })
     this.setData({
-      showAdmin:true
+      showAdmin: !this.data.showAdmin
     })
   }
 })
