@@ -42,7 +42,8 @@
 					"id": 1,
 					"name": "商铺详情",
 					"pathName": "pages/info/info",
-					"query": "id=XEwyZcDR1TiNyvnR"
+					"query": "id=XE0cj8DR1TiNzjpY",
+					"scene": null
 				},
 				{
 					"id": -1,
