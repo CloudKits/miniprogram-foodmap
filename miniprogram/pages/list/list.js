@@ -43,5 +43,10 @@ Page({
    */
   onReachBottom: function() {
     this.loadData();
+  },
+  navigateToSearch:function(e){
+    wx.navigateTo({
+      url: '../search/search',
+    })
   }
 })

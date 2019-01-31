@@ -26,3 +26,12 @@
   font-weight: 700;
   
 }
+.search_input{
+  background-color: #eee;
+  margin:5px;
+  width: 730rpx;
+  height: 80rpx;
+}
+.input-placeholder{
+  text-align: center;
+}

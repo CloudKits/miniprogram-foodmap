@@ -1,3 +1,4 @@
+<input class="search_input" placeholder='点我开始搜索' bindinput="navigateToSearch" bindfocus="navigateToSearch"></input>
 <block wx:for="{{stores}}" wx:key="_id">
   <navigator url="../info/info?id={{item._id}}">
     <view class="card">
