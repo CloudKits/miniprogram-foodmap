@@ -3,6 +3,9 @@
     <button class='button' open-type='getUserInfo' bindgetuserinfo='getUserInfo' bindlongpress='getOpenID' lang='zh_CN'>管理入口</button>
   </cover-view>
   <cover-view class="button show_all" bindtap="viewAll" bindlongpress='showAdmin'>查看全部</cover-view>
+  <cover-view wx:if="{{!showAdmin}}">
+    <navigator url='../search/search' class='cover button'>搜索</navigator>
+  </cover-view>
   <block wx:if="{{!hideMe}}">
     <cover-view class="add_me" bindtap="hideMe">添加到【我的小程序】更快找到我</cover-view>
     <cover-view class="up" bindtap="hideMe"></cover-view>

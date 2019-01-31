@@ -1,0 +1,16 @@
+<view class="search_box">
+  <input class='search_input' type="text" confirm-type="search" placeholder="请输入要搜索的关键词" bindconfirm="search"></input>
+</view>
+<block wx:if="{{stores}}" wx:for="{{stores}}" wx:key="_id">
+  <navigator url="../info/info?id={{item._id}}">
+    <view class="card">
+      <view class="card_title">{{item.title}}</view>
+      <view class="card_infobar">
+        <view class="card_address">{{item.address}}</view>
+      </view>
+    </view>
+  </navigator>
+</block>
+<block wx:if="{{stores.length == 0}}">
+  <view class="not_found">请点击上方搜索框输入要搜索的关键字</view>
+</block>
