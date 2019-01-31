@@ -26,11 +26,12 @@ map{
   font-size:30rpx;
   color: #fff;
   background-color: rgb(62, 207, 142);
-  width: 430rpx;
+  width: 450rpx;
   padding:20rpx;
   position: absolute;
   right: 10rpx;
   top:20rpx;
+  text-align: center;
 }
 .up{
   position: absolute;
