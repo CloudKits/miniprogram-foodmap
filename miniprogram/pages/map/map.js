@@ -44,7 +44,8 @@ Page({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
         hideMe:false,
-        showAdmin: showAdmin
+        showAdmin: showAdmin,
+        defaultScale: config.default_scale
       }, () => {
         wx.hideLoading();
         wx.showToast({

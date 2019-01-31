@@ -7,5 +7,6 @@ module.exports = {
   "center_longitude": 113.921736,
   "center_latitude": 22.538017,
   "dynamic_title":true,
-  "show_admin":false
+  "show_admin":false,
+  "default_scale":16
 }

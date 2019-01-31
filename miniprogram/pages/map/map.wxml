@@ -1,6 +1,6 @@
 <map 
   id="map" 
-  scale="16" 
+  scale="{{defaultScale}}" 
   longitude='{{longitude}}' 
   latitude='{{latitude}}' 
   style='height:{{windowHeight}}px' 
