@@ -166,5 +166,10 @@ Page({
     this.setData({
       showAdmin: !this.data.showAdmin
     })
+  },
+  search:function(){
+    wx.navigateTo({
+      url: '../search/search',
+    })
   }
 })

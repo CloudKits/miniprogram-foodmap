@@ -28,6 +28,9 @@ App({
      */
     let { windowHeight } = wx.getSystemInfoSync();
     let showAdmin = wx.getStorageSync('showAdmin');
+    if (showAdmin == ""){
+      showAdmin = false;
+    }
     this.globalData = { windowHeight, is_administrator: false, showAdmin: showAdmin}
   }
 })
