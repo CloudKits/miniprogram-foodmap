@@ -45,7 +45,7 @@ Page({
     this.loadData();
   },
   navigateToSearch:function(e){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../search/search',
     })
   }
