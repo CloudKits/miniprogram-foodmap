@@ -46,12 +46,6 @@ Page({
       if (res.data.length == 0) {
         this.setData({
           searched:true
-        },res => {
-          wx.showToast({
-            title: '没有您要找的店铺了哦',
-            icon: 'none'
-          });
-          return;
         })
       }
       this.setData({
