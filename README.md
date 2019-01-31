@@ -32,6 +32,8 @@
 
 ## Demo 小程序
 
+> 如果你希望自己的小程序展示在这里，可以发送你的小程序码 + 小程序名称到 xiqingongzi+foodmap@gmail.com
+
 | **深圳美食图鉴** |  **jooyi的美食地图** | **千岛湖民宿地图**|
 | ---- |  ----| ----|
 | ![小程序码](https://postimg.aliavv.com/mweb/2019/01/28/gh_ab61838fb8b2_258.jpg)|![](https://postimg.aliavv.com/201810/mw4c9.jpg)| ![](https://postimg.aliavv.com/201810/pw1cy.jpg)|
