@@ -103,15 +103,10 @@ Page({
     }
   },
   /**
-   * 用户点击右上角分享
+   * @Task 4.5.5 
+   * 请在下方输入你的代码
    */
-  onShareAppMessage: function () {
-    return {
-      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
-      path: '/pages/map/map?_mta_ref_id=group',
-      imageUrl: "/images/share.jpg"
-    }
-  },
+  
   onMarkerTap: function (event) {
     wx.navigateTo({
       url: '../info/info?id=' + event.markerId,
