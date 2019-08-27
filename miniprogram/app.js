@@ -1,17 +1,7 @@
-const mta = require('vendor/mta_analysis.js');
 const config = require('config.js');
 App({
   onLaunch: function (options) {
-    /**
-     * 初始化 MTA  检测
-     */
-    mta.App.init({
-      "appID": config.mtaAppID,
-      "eventID": config.mtaEventID,
-      "statShareApp": true,
-      "statReachBottom": true,
-      "lauchOpts": options,
-    });
+    
     /**
      * 初始化云开发
      */
