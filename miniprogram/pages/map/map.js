@@ -41,7 +41,9 @@ Page({
   },
 
   onShow: function () {
-    // #10 添加完成后更新一下 map
+    /**
+     * @Task 4.5.4 开发首页的自动刷新功能
+     */
     store.get().then(res => {
       let data = res.data;
       data.map(item => {
