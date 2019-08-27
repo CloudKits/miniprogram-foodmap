@@ -4,15 +4,9 @@ App({
     
     /**
      * 初始化云开发
+     * @Task 4.5.2 初始化云开发能力
      */
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        traceUser: true,
-        env: config.envID
-      })
-    }
+    
     /**
      * 获取屏幕高度
      */
