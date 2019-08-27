@@ -43,16 +43,8 @@ Page({
   onShow: function () {
     /**
      * @Task 4.5.4 开发首页的自动刷新功能
+     * 请在下方输入你的代码
      */
-    store.get().then(res => {
-      let data = res.data;
-      data.map(item => {
-        item.id = item._id
-      });
-      this.setData({
-        stores: res.data
-      })
-    })
   },
 
   viewAll: function () {
