@@ -57,31 +57,10 @@ Page({
       title: '上传数据中...',
     })
     let value = event.detail.value
-    store.add({
-      data: {
-        ...value,
-        thumbs_up: 1,
-        iconPath: "/images/food.png",
-        longitude: this.data.longitude,
-        latitude: this.data.latitude,
-        label: {
-          content: value.title
-        },
-        images: this.data.images
-      }
-    }).then(res => {
-      wx.hideLoading();
-      wx.showToast({
-        title: '创建成功！',
-        icon: 'success',
-        success: res => {
-          wx.navigateBack({
-          })
-        }
-      })
-    }).catch(error => {
-      console.error(error);
-    })
+    /**
+     * @Task 4.5.8 完成数据新增的功能
+     * 请在下方输入你的代码
+     */
   },
   uploadImage: function (e) {
     wx.chooseImage({
