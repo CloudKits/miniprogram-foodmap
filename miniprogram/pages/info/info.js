@@ -90,21 +90,10 @@ Page({
       content: '您真的要删除' + this.data.store.title + "么？",
       success: res => {
         if (res.confirm) {
-          store.doc(this.data.store._id).remove().then(res => {
-            wx.showToast({
-              title: '删除成功',
-              icon:'success',
-              success:res => {
-                wx.navigateBack({
-                  delta: 2
-                })
-              }
-            })
-          }).catch(error => {
-            wx.showToast({
-              title: '删除失败！请添加微信 ixiqin_com 排查问题',
-            })
-          })
+          /**
+           * @Task 4.5.7.2 完成数据删除的功能
+           * 请在下方输入你的代码
+           */
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
