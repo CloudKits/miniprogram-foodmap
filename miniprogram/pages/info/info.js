@@ -19,24 +19,10 @@ Page({
       title: '加载中...',
     })
     
-    store.doc(options.id).get().then(res => {
-      if (config.dynamic_title){
-        wx.setNavigationBarTitle({
-          title: res.data.title,
-        });
-      }
-      // 两次切割以适配中英文逗号
-      let keywords_array = res.data.keywords.split(',').map(item => { return item.split('，') })
-      // 将数组压平
-      let keywords = [].concat.apply([], keywords_array);
-      res.data.keywords = keywords
-      this.setData({
-        store: res.data,
-        is_administrator: app.globalData.is_administrator
-      },res => {
-        wx.hideLoading();
-      })
-    })
+    /**
+     * @Task 4.5.7.1 开发美食详情页的功能 —— 查询数据
+     * 请在下方输入您的代码
+     */
   },
   tapImage:function(e){
     wx.previewImage({
