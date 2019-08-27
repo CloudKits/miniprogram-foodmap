@@ -33,25 +33,10 @@ Page({
     this.loadData();
   },
   loadData:function(keywords){
-    store.skip(this.data.numbers).where({
-      title: db.RegExp({
-        regexp: this.data.keywords,
-        options: 'i',
-      })
-    }).get().then(res => {
-      /**
-       * 如果没有数据，就提示没有商户了，并返回。
-       */
-      if (res.data.length == 0) {
-        this.setData({
-          searched:true
-        })
-      }
-      this.setData({
-        stores: this.data.stores.concat(res.data),
-        numbers: this.data.numbers + res.data.length
-      });
-    })
+    /**
+     * @Task 4.5.9 完成搜索功能
+     * 请在下方输入你的代码
+     */
   },
   search:function(e){
     this.setData({
