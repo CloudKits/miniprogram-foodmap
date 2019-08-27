@@ -7,19 +7,10 @@ cloud.init()
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()  
   const administrator = process.env.ADMIN.split('|');
-
-  if (administrator.indexOf(wxContext.OPENID) == -1){
-    return {
-      data:{
-        is_administrator:false
-      }
-    }
-  }else{
-    return {
-      data: {
-        is_administrator: true
-      }
-    }
-  }
+  
+  /**
+   * @Task 4.5.10.2  添加管理员身份校验函数
+   * 请在下方输入你的代码
+   */
 
 }
