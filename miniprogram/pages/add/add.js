@@ -58,7 +58,7 @@ Page({
     })
     let value = event.detail.value
     /**
-     * @Task 4.5.8 完成数据新增的功能
+     * @Task 4.5.8.3 完成数据新增的功能
      * 请在下方输入你的代码
      */
   },
@@ -77,33 +77,19 @@ Page({
             src: tempFilePath
           })
         }
-        const uploadTask = items.map(item => this.uploadPhoto(item.src))
-
-        Promise.all(uploadTask).then(result => {
-
-          let urls = [];
-          for (const file of result) {
-            urls.push(file.fileID);
-          }
-          this.setData({
-            images: urls
-          }, res => {
-            wx.hideLoading();
-            wx.showToast({ title: '上传图片成功', icon: 'success' })
-          })
-        }).catch(() => {
-          wx.hideLoading()
-          wx.showToast({ title: '上传图片错误', icon: 'error' })
-        })
+        /**
+         * @Task 4.5.8.2 实现图片的批量上传
+         * 请在下方输入你的代码
+         */
 
         this.setData({ tempPhoto: items })
       }
     })
   },
   uploadPhoto(filePath) {
-    return wx.cloud.uploadFile({
-      cloudPath: `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}.png`,
-      filePath
-    })
+    /**
+     * @Task 4.5.8.1 完成图片上传的功能
+     * 请在下方输入你的代码
+     */
   }
 })
