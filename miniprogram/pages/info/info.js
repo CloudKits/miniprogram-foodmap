@@ -18,24 +18,30 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    store.doc(options.id).get().then(res => {
-      if (config.dynamic_title){
-        wx.setNavigationBarTitle({
-          title: res.data.title,
-        });
-      }
-      // 两次切割以适配中英文逗号
-      let keywords_array = res.data.keywords.split(',').map(item => { return item.split('，') })
-      // 将数组压平
-      let keywords = [].concat.apply([], keywords_array);
-      res.data.keywords = keywords
-      this.setData({
-        store: res.data,
-        is_administrator: app.globalData.is_administrator
-      },res => {
-        wx.hideLoading();
-      })
-    })
+
+    /**
+     * @task #6 开发美食详情页的功能
+     * @chapter 1.5.7.1  查询数据
+     * 请取消下方代码的注释
+     */
+
+    // store.doc(options.id).get().then(res => {
+    //   if (config.dynamic_title){
+    //     wx.setNavigationBarTitle({
+    //       title: res.data.title,
+    //     });
+    //   }
+    //   let keywords_array = res.data.keywords.split(',').map(item => { return item.split('，') })
+    //   let keywords = [].concat.apply([], keywords_array);
+    //   res.data.keywords = keywords
+    //   this.setData({
+    //     store: res.data,
+    //     is_administrator: app.globalData.is_administrator
+    //   },res => {
+    //     wx.hideLoading();
+    //   })
+    // })
+    
   },
   tapImage:function(e){
     wx.previewImage({
@@ -103,21 +109,30 @@ Page({
       content: '您真的要删除' + this.data.store.title + "么？",
       success: res => {
         if (res.confirm) {
-          store.doc(this.data.store._id).remove().then(res => {
-            wx.showToast({
-              title: '删除成功',
-              icon:'success',
-              success:res => {
-                wx.navigateBack({
-                  delta: 2
-                })
-              }
-            })
-          }).catch(error => {
-            wx.showToast({
-              title: '删除失败！请添加微信 ixiqin_com 排查问题',
-            })
-          })
+
+          /**
+           * @task #7 完成数据删除的功能
+           * @chapter 1.5.7.2  完成数据删除的功能
+           * 请取消下方代码的注释
+           */
+
+          // store.doc(this.data.store._id).remove().then(res => {
+          //   wx.showToast({
+          //     title: '删除成功',
+          //     icon:'success',
+          //     success:res => {
+          //       wx.navigateBack({
+          //         delta: 2
+          //       })
+          //     }
+          //   })
+          // }).catch(error => {
+          //   wx.showToast({
+          //     title: '删除失败！请添加微信 ixiqin_com 排查问题',
+          //   })
+          // })
+
+
         } else if (res.cancel) {
           console.log('用户点击取消')
         }
