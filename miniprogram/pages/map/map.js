@@ -1,4 +1,3 @@
-const mta = require('../../vendor/mta_analysis.js');
 const app = getApp();
 const config = require('../../config.js');
 const db = wx.cloud.database()
@@ -33,7 +32,6 @@ Page({
     wx.showLoading({
       title: '数据加载中...',
     })
-    mta.Page.init();
     store.get().then(res => {
       let data = res.data;
       // 将 _id 给 id ,确保 marker 事件的正确触发

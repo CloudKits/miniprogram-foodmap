@@ -1,4 +1,3 @@
-const mta = require('../../vendor/mta_analysis.js');
 const app = getApp();
 const db = wx.cloud.database()
 const store = db.collection('store');
@@ -15,7 +14,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    mta.Page.init();
   },
   chooseLocation: function (event) {
     wx.getSetting({
