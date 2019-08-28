@@ -55,31 +55,39 @@ Page({
       title: '上传数据中...',
     })
     let value = event.detail.value
-    store.add({
-      data: {
-        ...value,
-        thumbs_up: 1,
-        iconPath: "/images/food.png",
-        longitude: this.data.longitude,
-        latitude: this.data.latitude,
-        label: {
-          content: value.title
-        },
-        images: this.data.images
-      }
-    }).then(res => {
-      wx.hideLoading();
-      wx.showToast({
-        title: '创建成功！',
-        icon: 'success',
-        success: res => {
-          wx.navigateBack({
-          })
-        }
-      })
-    }).catch(error => {
-      console.error(error);
-    })
+
+    /**
+     * @task #10 完成数据新增的功能
+     * @chapter 1.5.8.3  完成数据新增的功能
+     * 请取消下方代码的注释
+     */
+
+    // store.add({
+    //   data: {
+    //     ...value,
+    //     thumbs_up: 1,
+    //     iconPath: "/images/food.png",
+    //     longitude: this.data.longitude,
+    //     latitude: this.data.latitude,
+    //     label: {
+    //       content: value.title
+    //     },
+    //     images: this.data.images
+    //   }
+    // }).then(res => {
+    //   wx.hideLoading();
+    //   wx.showToast({
+    //     title: '创建成功！',
+    //     icon: 'success',
+    //     success: res => {
+    //       wx.navigateBack({
+    //       })
+    //     }
+    //   })
+    // }).catch(error => {
+    //   console.error(error);
+    // })
+    
   },
   uploadImage: function (e) {
     wx.chooseImage({
@@ -96,33 +104,49 @@ Page({
             src: tempFilePath
           })
         }
-        const uploadTask = items.map(item => this.uploadPhoto(item.src))
 
-        Promise.all(uploadTask).then(result => {
+        /**
+         * @task #9 实现图片的批量上传
+         * @chapter 1.5.8.2  实现图片的批量上传
+         * 请取消下方代码的注释
+         */
 
-          let urls = [];
-          for (const file of result) {
-            urls.push(file.fileID);
-          }
-          this.setData({
-            images: urls
-          }, res => {
-            wx.hideLoading();
-            wx.showToast({ title: '上传图片成功', icon: 'success' })
-          })
-        }).catch(() => {
-          wx.hideLoading()
-          wx.showToast({ title: '上传图片错误', icon: 'error' })
-        })
+        // const uploadTask = items.map(item => this.uploadPhoto(item.src))
+
+        // Promise.all(uploadTask).then(result => {
+
+        //   let urls = [];
+        //   for (const file of result) {
+        //     urls.push(file.fileID);
+        //   }
+        //   this.setData({
+        //     images: urls
+        //   }, res => {
+        //     wx.hideLoading();
+        //     wx.showToast({ title: '上传图片成功', icon: 'success' })
+        //   })
+        // }).catch(() => {
+        //   wx.hideLoading()
+        //   wx.showToast({ title: '上传图片错误', icon: 'error' })
+        // })
+
+
 
         this.setData({ tempPhoto: items })
       }
     })
   },
   uploadPhoto(filePath) {
-    return wx.cloud.uploadFile({
-      cloudPath: `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}.png`,
-      filePath
-    })
+
+    /**
+     * @task #8 完成图片上传功能
+     * @chapter 1.5.8.1  完成图片上传功能
+     * 请取消下方代码的注释
+     */
+
+    // return wx.cloud.uploadFile({
+    //   cloudPath: `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}.png`,
+    //   filePath
+    // })
   }
 })
