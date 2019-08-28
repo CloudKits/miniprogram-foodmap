@@ -34,11 +34,11 @@ Page({
     })
 
     /**
-       * @task #2 开发首页的数据查询功能
-       * @chapter 1.5.3  开发首页的数据查询功能
-       * 请取消下方代码的注释
+     * @task #2 开发首页的数据查询功能
+     * @chapter 1.5.3  开发首页的数据查询功能
+     * 请取消下方代码的注释
      */
-    
+
 
     // store.get().then(res => {
     //   let data = res.data;
@@ -64,16 +64,24 @@ Page({
   },
 
   onShow: function () {
-    // #10 添加完成后更新一下 map
-    store.get().then(res => {
-      let data = res.data;
-      data.map(item => {
-        item.id = item._id
-      });
-      this.setData({
-        stores: res.data
-      })
-    })
+
+    /**
+     * @task #3 开发首页的自动刷新功能
+     * @chapter 1.5.4  实现小程序的自动刷新功能
+     * 请取消下方代码的注释
+     */
+
+    // store.get().then(res => {
+    //   let data = res.data;
+    //   data.map(item => {
+    //     item.id = item._id
+    //   });
+    //   this.setData({
+    //     stores: res.data
+    //   })
+    // })
+
+
   },
 
   viewAll: function () {
@@ -135,11 +143,19 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
-      path: '/pages/map/map?_mta_ref_id=group',
-      imageUrl: "/images/share.jpg"
-    }
+
+    /**
+     * @task #4 实现小程序的分享功能
+     * @chapter 1.5.5  实现小程序的分享功能
+     * 请取消下方代码的注释
+     */
+    
+    // return {
+    //   title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
+    //   path: '/pages/map/map?_mta_ref_id=group',
+    //   imageUrl: "/images/share.jpg"
+    // }
+    
   },
   onMarkerTap: function (event) {
     wx.navigateTo({
