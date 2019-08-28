@@ -32,26 +32,34 @@ Page({
     wx.showLoading({
       title: '数据加载中...',
     })
-    store.get().then(res => {
-      let data = res.data;
-      // 将 _id 给 id ,确保 marker 事件的正确触发
-      data.map(item => {
-        item.id = item._id
-      });
-      this.setData({
-        stores: res.data,
-        windowHeight: app.globalData.windowHeight,
-        hideMe:false,
-        showAdmin: showAdmin,
-        defaultScale: config.default_scale
-      }, () => {
-        wx.hideLoading();
-        wx.showToast({
-          title: '双指缩放可以调整地图可视区域，查看更多美食',
-          icon: 'none'
-        })
-      })
-    })
+
+    /**
+       * @task #2 开发首页的数据查询功能
+       * @chapter 1.5.3  开发首页的数据查询功能
+       * 请取消下方代码的注释
+     */
+    
+
+    // store.get().then(res => {
+    //   let data = res.data;
+    //   data.map(item => {
+    //     item.id = item._id
+    //   });
+    //   this.setData({
+    //     stores: res.data,
+    //     windowHeight: app.globalData.windowHeight,
+    //     hideMe:false,
+    //     showAdmin: showAdmin,
+    //     defaultScale: config.default_scale
+    //   }, () => {
+    //     wx.hideLoading();
+    //     wx.showToast({
+    //       title: '双指缩放可以调整地图可视区域，查看更多美食',
+    //       icon: 'none'
+    //     })
+    //   })
+    // })
+
 
   },
 
