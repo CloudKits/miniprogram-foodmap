@@ -10,14 +10,11 @@ App({
       /**
        * @task #1 初始化云开发能力
        * @chapter 1.5.2  初始化云开发能力
-       * 请取消下方代码的注释
+       * 请在下方输入代码
        */
 
 
-      // wx.cloud.init({
-      //   traceUser: true,
-      //   env: config.envID
-      // })
+      
 
 
     }
