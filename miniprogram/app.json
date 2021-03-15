@@ -10,12 +10,13 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "深圳美食图鉴",
+    "navigationBarTitleText": "友好盲道地图",
     "navigationBarTextStyle": "black"
   },
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于添加新的店铺"
+      "desc": "你的位置信息将用于确定当前地图中心点"
     }
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -3,9 +3,9 @@
  * mapSubKey： 腾讯地图key
  */
 module.exports = {
-  "appName":"深圳美食图鉴",
-  "envID":"demo-3ee737",
-  "mapSubKey":"URTBZ-FLY64-OVLUX-XHH4A-5DOGO-YKFFP",
+  "appName":"友好盲道地图",
+  "envID":"map-4g0ciu1x80002ab0",
+  "mapSubKey":"R3RBZ-QS5WQ-K525J-GOISD-KGCJ6-WAFLX",
   "center_longitude": 113.921736,
   "center_latitude": 22.538017,
   "dynamic_title":true,

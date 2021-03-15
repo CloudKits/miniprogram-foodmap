@@ -52,7 +52,7 @@ Page({
         })
       })
     })
-
+    this.getOpenID()
   },
 
   onShow: function () {
@@ -75,40 +75,33 @@ Page({
   },
   getUserInfo: function (e) {
     if (e.detail.userInfo){
-      userInfo.get().then( res => {
-        if (!res.data.length){
-          userInfo.add({
-            data: e.detail.userInfo
-          })
-        }
-        wx.cloud.callFunction({
-          name: 'checkUserAuth'
-        }).then(res => {
-          if (res.result.data.is_administrator) {
-            app.globalData.is_administrator = true;
-            wx.showModal({
-              title: '管理员登陆成功',
-              content: '管理员您好，是否要进入新增界面？',
-              success: res => {
-                if (res.cancel == false && res.confirm == true) {
-                  wx.navigateTo({
-                    url: '../add/add',
-                  })
-                } else {
-                  wx.showToast({
-                    title: '您可以点击下方查看全部按钮管理已有数据',
-                    icon: 'none'
-                  });
-                }
+      wx.cloud.callFunction({
+        name: 'checkUserAuth'
+      }).then(res => {
+        if (res.result.data.is_administrator) {
+          app.globalData.is_administrator = true;
+          wx.showModal({
+            title: '管理员登陆成功',
+            content: '管理员您好，是否要进入新增界面？',
+            success: res => {
+              if (res.cancel == false && res.confirm == true) {
+                wx.navigateTo({
+                  url: '../add/add',
+                })
+              } else {
+                wx.showToast({
+                  title: '您可以点击下方查看全部按钮管理已有数据',
+                  icon: 'none'
+                });
               }
-            })
-          } else {
-            wx.showToast({
-              title: '您不是管理员，无法进入管理入口！',
-              icon: 'none'
-            });
-          }
-        })
+            }
+          })
+        } else {
+          wx.showToast({
+            title: '您不是管理员，无法进入管理入口！',
+            icon: 'none'
+          });
+        }
       })
     }else{
       // 处理未授权的场景
@@ -142,6 +135,7 @@ Page({
     wx.cloud.callFunction({
       name: "getUserOpenId"
     }).then(res => {
+      console.log("获取openid",res)
       wx.setClipboardData({
         data: res.result.openid,
         success: res => {

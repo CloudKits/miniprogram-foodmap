@@ -1,64 +1,87 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"autoAudits": false,
-		"nodeModules": true
-	},
-	"appid": "wxd1ca70db507085dd",
-	"projectname": "meishitujian",
-	"libVersion": "2.4.4",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"miniprogram": {
-			"current": 3,
-			"list": [
-				{
-					"id": -1,
-					"name": "全部内容",
-					"pathName": "pages/list/list",
-					"query": ""
-				},
-				{
-					"id": 1,
-					"name": "商铺详情",
-					"pathName": "pages/info/info",
-					"query": "id=XE0cj8DR1TiNzjpY",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "新增数据",
-					"pathName": "pages/add/add",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "搜索页面",
-					"pathName": "pages/search/search",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "appid": "wx9e77ae37861c73ec",
+  "projectname": "meishitujian",
+  "libVersion": "2.4.4",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "全部内容",
+          "pathName": "pages/list/list",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "商铺详情",
+          "pathName": "pages/info/info",
+          "query": "id=XE0cj8DR1TiNzjpY",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新增数据",
+          "pathName": "pages/add/add",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "搜索页面",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
 }
