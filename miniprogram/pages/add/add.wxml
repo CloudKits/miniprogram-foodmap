@@ -1,23 +1,15 @@
 <form report-submit='true' onsubmit="createItem">
-  <view class='desc'>位置设定</view>
+  <view class='desc'>位置标记</view>
   <view class="loactionGroup">
     <button bindtap='chooseLocation' type='primary'>地图选址</button>
   </view>
-  <view class='desc'>名称设定</view>
-  <input placeholder='请输入店铺的名称' name="title" value='{{name}}'></input>
+  <view class='desc'>问题描述</view>
+  <input placeholder='建议以：附近关键地点+故障问题描述' name="title" value='{{problem}}'></input>
   <view class='desc'>地址设定</view>
-  <input placeholder='店铺的门牌号是？' name="address" value='{{address}}'></input>
-  <view class='desc'>电话设定</view>
-  <input placeholder='店家的电话是？' name="contact" value='{{phone}}'></input>
-  <view class='desc'>人均价格设定</view>
-  <input placeholder='单位是元～' name="price_per" type="number" value='{{price_per}}'></input>
-  <view class='desc'>关键词设定</view>
-  <input placeholder='比如，上下九步行街，太古汇，家附近' name="keywords" value='{{price_per}}'></input>
-  <view class='desc'>个人点评</view>
-  <textarea placeholder='你为大家推荐什么菜呢？' name="notes" value="{{notes}}"></textarea>
-  <view class='desc'>评分（10分制）</view>
-  <slider min="1" max="10" show-value name="star" value="5"></slider>
-  <view class='desc'>美食照片</view>
+  <input placeholder='定位后会自动标记' name="address" value='{{address}} {{name}}'></input>
+  <view class='desc'>图片上传</view>
   <button bindtap='uploadImage'>点我选择照片</button>
+  <view class='desc'>问题分类</view>
+  <input placeholder='比如，盲道占用，盲道破损，盲道设计有问题' name="keywords" value='{{price_per}}'></input>
   <button class='submit' type="primary" form-type='submit'>创建</button>
 </form>
