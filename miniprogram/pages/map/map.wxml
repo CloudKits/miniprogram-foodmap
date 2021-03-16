@@ -44,7 +44,7 @@
       </cover-view>
       <!-- 上传新增 -->
       <cover-view class="nav-tabbar-center add">
-        <cover-image class="nav-tabbar-image" src="/images/nav/add.png" open-type='getUserInfo' bindgetuserinfo='addMarker'></cover-image>
+        <cover-image class="nav-tabbar-image" src="/images/nav/add.png" open-type='getUserInfo' bindtap='addMarker'></cover-image>
         <cover-view>上传</cover-view>
       </cover-view>
       <!-- 查看全部 -->
