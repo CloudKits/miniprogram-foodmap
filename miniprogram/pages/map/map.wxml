@@ -35,29 +35,25 @@
   <cover-view class="getLocation" bindtap="onLoad">
     <cover-image src="/images/home/getLocation.png"></cover-image>
   </cover-view>
-
   <cover-view class="nav">
     <cover-view class="nav-tabbar">
-    <!-- 上传新增 -->
-    <cover-view class="nav-tabbar-left nav-button" bindgetuserinfo='addMarker'>
-      <!-- <cover-image class="nav-tabbar-image" src="/images/nav/article.png"></cover-image> -->
-        盲道科普
-    </cover-view>
-    <!-- 上传新增 -->
-    <cover-view class="nav-tabbar-center">
-      <button class='add' open-type='getUserInfo' bindgetuserinfo='addMarker' lang='zh_CN'>
-         <!-- <cover-image class="nav-tabbar-image" src="/images/nav/add.png"></cover-image> -->
-        上传
-      </button>
-    </cover-view>
-    <!-- 查看全部 -->
-    <cover-view class="nav-tabbar-right nav-button" bindtap="viewAll" bindlongpress='showAdmin'>
-      <!-- <cover-image class="nav-tabbar-image" src="/images/nav/list.png"></cover-image> -->
-      筑路日志
+      <!-- 上传新增 -->
+      <cover-view class="nav-tabbar-left nav-button" bindgetuserinfo='addMarker'>
+        <cover-image class="nav-tabbar-image" src="/images/nav/article.png"></cover-image>
+        <cover-view>盲道科普</cover-view>
+      </cover-view>
+      <!-- 上传新增 -->
+      <cover-view class="nav-tabbar-center add">
+        <cover-image class="nav-tabbar-image" src="/images/nav/add.png" open-type='getUserInfo' bindgetuserinfo='addMarker'></cover-image>
+        <cover-view>上传</cover-view>
+      </cover-view>
+      <!-- 查看全部 -->
+      <cover-view class="nav-tabbar-right nav-button" bindtap="viewAll" bindlongpress='showAdmin'>
+        <cover-image class="nav-tabbar-image" src="/images/nav/list.png"></cover-image>
+        <cover-view>筑路日志</cover-view>
+      </cover-view>
     </cover-view>
   </cover-view>
-  </cover-view>
-  
   <!-- 管理入口 -->
   <!-- <cover-view class="cover" wx:if="{{showAdmin}}">
     <button class='button' open-type='getUserInfo' bindgetuserinfo='getUserInfo' bindlongpress='getOpenID'

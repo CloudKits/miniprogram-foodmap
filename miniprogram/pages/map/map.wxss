@@ -33,8 +33,9 @@ map {
 }
 
 .nav-tabbar-image{
-  width: 18px;
-  height: 19px;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 3px;
 }
 
 
@@ -60,23 +61,31 @@ map {
 .nav-button {
   height: 100rpx;
   width: 220rpx;
-  font-size: 35rpx;
+  font-size: 25rpx;
   text-align: center;
-  color: #7795f8;
+  /* color: #7795f8; */
   background-color: rgb(255, 255, 255);
-  line-height: 100rpx;
+  /* line-height: 100rpx; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .add{
   width: 60px;
   height: 60px;
-  font-size: 35rpx;
-  text-align: center;
-  line-height: 60px;
+  font-size: 25rpx;
   color: #fff;
   background-color: #0079e7;
   border-radius: 50%;
   overflow:hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
