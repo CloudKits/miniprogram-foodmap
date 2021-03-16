@@ -41,3 +41,12 @@ map{
 	border-left:20rpx solid transparent;
 	border-bottom:20rpx solid rgb(62, 207, 142);
 }
+
+/* 中心标记点 */
+.center {
+  width:32px;
+  height:40px;
+  margin: 0 auto;
+  position: relative;
+  top: calc( 50% - 40px );
+}

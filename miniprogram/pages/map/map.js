@@ -4,6 +4,7 @@ const db = wx.cloud.database()
 const store = db.collection('store');
 const userInfo = db.collection('userInfo');
 
+
 Page({
 
   /**
@@ -14,8 +15,8 @@ Page({
     latitude: config.center_latitude,
     windowHeight: 600,
     mapSubKey: config.mapSubKey,
-    hideMe:true,
-    showAdmin:false,
+    hideMe: true,
+    showAdmin: false,
   },
 
   /**
@@ -23,7 +24,7 @@ Page({
    */
   onLoad: function (options) {
 
-    let showAdmin = config.show_admin?true:false;
+    let showAdmin = config.show_admin ? true : false;
 
     if (app.globalData.showAdmin) {
       showAdmin = true;
@@ -41,7 +42,7 @@ Page({
       this.setData({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
-        hideMe:false,
+        hideMe: false,
         showAdmin: showAdmin,
         defaultScale: config.default_scale
       }, () => {
@@ -52,7 +53,17 @@ Page({
         })
       })
     })
+
     this.getOpenID()
+
+    this.mapCtx = wx.createMapContext('map');
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    this.getCenterLocation();
   },
 
   onShow: function () {
@@ -74,7 +85,7 @@ Page({
     })
   },
   getUserInfo: function (e) {
-    if (e.detail.userInfo){
+    if (e.detail.userInfo) {
       wx.cloud.callFunction({
         name: 'checkUserAuth'
       }).then(res => {
@@ -103,7 +114,7 @@ Page({
           });
         }
       })
-    }else{
+    } else {
       // 处理未授权的场景
       wx.showModal({
         title: '授权失败',
@@ -115,6 +126,18 @@ Page({
         }
       })
     }
+  },
+  /**
+   * 获取中心点经纬度
+   */
+  getCenterLocation: function () {
+    this.mapCtx.getCenterLocation({
+      success: (res) => {
+        this.longitude=res.longitude;
+        this.latitude=res.latitude;
+        console.log("当前中心点的位置：", this.longitude, this.latitude);
+      }
+    })
   },
   /**
    * 用户点击右上角分享
@@ -135,23 +158,23 @@ Page({
     wx.cloud.callFunction({
       name: "getUserOpenId"
     }).then(res => {
-      console.log("获取openid",res)
-      wx.setClipboardData({
-        data: res.result.openid,
-        success: res => {
-          wx.showToast({
-            title: 'openID已复制',
-          })
-        }
-      })
+      console.log('openID已复制', res)
+      // wx.setClipboardData({
+      //   data: res.result.openid,
+      //   success: res => {
+      //     wx.showToast({
+      //       title: 'openID已复制',
+      //     })
+      //   }
+      // })
     })
   },
-  hideMe:function(res){
+  hideMe: function (res) {
     this.setData({
       hideMe: true
     })
   },
-  showAdmin:function(res){
+  showAdmin: function (res) {
     wx.setStorage({
       key: 'showAdmin',
       data: !this.data.showAdmin,
@@ -160,7 +183,7 @@ Page({
       showAdmin: !this.data.showAdmin
     })
   },
-  search:function(){
+  search: function () {
     wx.navigateTo({
       url: '../search/search',
     })

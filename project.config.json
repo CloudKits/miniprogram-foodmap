@@ -39,7 +39,7 @@
   },
   "appid": "wx9e77ae37861c73ec",
   "projectname": "meishitujian",
-  "libVersion": "2.4.4",
+  "libVersion": "2.16.0",
   "condition": {
     "search": {
       "list": []

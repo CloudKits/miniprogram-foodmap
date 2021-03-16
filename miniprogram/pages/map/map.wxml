@@ -1,32 +1,26 @@
-<map 
-  id="map" 
-  scale="{{defaultScale}}" 
-  longitude='{{longitude}}' 
-  latitude='{{latitude}}' 
-  style='height:{{windowHeight}}px' 
-  markers="{{stores}}" 
-  subkey="{{mapSubKey}}" 
-  show-compass="{{true}}"
-   bindmarkertap="onMarkerTap">
-   <!-- 上方的添加提醒 -->
-    <block wx:if="{{!hideMe}}">
-      <cover-view class="add_me" bindtap="hideMe">添加到【我的小程序】更快找到我</cover-view>
-      <cover-view class="up" bindtap="hideMe"></cover-view>
-    </block>
-    <!-- 管理入口 -->
-    <cover-view class="cover" wx:if="{{showAdmin}}">
-      <button 
-        class='button' 
-        open-type='getUserInfo' 
-        bindgetuserinfo='getUserInfo' 
-        bindlongpress='getOpenID' lang='zh_CN'>管理入口</button>
-    </cover-view>
-    <!-- 搜索按钮 -->
-    <cover-view wx:else class="cover">
-      <button class='button' bindtap='search'>搜索</button>
-    </cover-view>
-    <!-- 查看全部 -->
-    <cover-view class="button show_all" bindtap="viewAll" bindlongpress='showAdmin'>查看全部</cover-view>
-    
- 
+<map id="map" longitude='{{longitude}}' latitude='{{latitude}}'
+  style='height:{{windowHeight}}px' markers="{{stores}}" subkey="{{mapSubKey}}" show-compass="{{true}}"
+  bindmarkertap="onMarkerTap" show-location="true" enable-building="true" enable-3D="true">
+  <!-- 中心点标记点 -->
+  <cover-view class="center">
+    <cover-image style="" src="../../images/center-marker.png"></cover-image>
+  </cover-view>
+  <!-- 上方的添加提醒 -->
+  <block wx:if="{{!hideMe}}">
+    <cover-view class="add_me" bindtap="hideMe">添加到【我的小程序】更快找到我</cover-view>
+    <cover-view class="up" bindtap="hideMe"></cover-view>
+  </block>
+  <!-- 管理入口 -->
+  <cover-view class="cover" wx:if="{{showAdmin}}">
+    <button class='button' open-type='getUserInfo' bindgetuserinfo='getUserInfo' bindlongpress='getOpenID'
+      lang='zh_CN'>管理入口</button>
+  </cover-view>
+  <!-- 搜索按钮 -->
+  <cover-view wx:else class="cover">
+    <button class='button' bindtap='search'>搜索</button>
+  </cover-view>
+  <!-- 查看全部 -->
+  <cover-view class="button show_all" bindtap="viewAll" bindlongpress='showAdmin'>查看全部</cover-view>
+
+
 </map>
