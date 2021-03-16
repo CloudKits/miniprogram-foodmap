@@ -2,7 +2,6 @@ const app = getApp();
 const config = require("../../config.js");
 const db = wx.cloud.database();
 const store = db.collection("store");
-const userInfo = db.collection("userInfo");
 
 Page({
   /**
@@ -55,8 +54,8 @@ Page({
     });
 
     this.getOpenID();
-    this.mapCtx = wx.createMapContext("map");
     this.getCenterLocation();
+    this.mapCtx = wx.createMapContext("map");
   },
 
   onShow: function () {
@@ -83,7 +82,7 @@ Page({
       url: "../add/add",
     });
   },
-  
+
   getUserInfo: function (e) {
     if (e.detail.userInfo) {
       wx.cloud
@@ -129,15 +128,26 @@ Page({
       });
     }
   },
+
   /**
-   * 获取中心点经纬度
+   * 获取用户经纬度
    */
   getCenterLocation: function () {
-    this.mapCtx.getCenterLocation({
+    wx.getLocation({
+      type: "gcj02",
       success: (res) => {
-        this.longitude = res.longitude;
-        this.latitude = res.latitude;
-        console.log("当前中心点的位置：", this.longitude, this.latitude);
+        this.setData({
+          longitude: res.longitude,
+          latitude: res.latitude
+        })
+        console.log(
+          "当前中心点的位置：",
+          this.data.longitude,
+          this.data.latitude
+        );
+      },
+      fail: (err) => {
+        console.log("err", err);
       },
     });
   },

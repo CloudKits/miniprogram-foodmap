@@ -50,3 +50,41 @@ map{
   position: relative;
   top: calc( 50% - 40px );
 }
+
+/* 问题列表 */
+.numberList{
+  position: absolute;
+  right: 12px;
+  top: 60px;
+  text-align: center;
+}
+
+.numberList-item{
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 5px 10px 4px;
+  box-shadow:2px 1px 3px #999999;
+}
+
+.numberList-item-image{
+  width: 30px;
+  margin-right: 5px;
+}
+
+.numberList-item-text{
+  font-size: 14px;
+}
+
+.getLocation{
+  position: absolute;
+  left: 12px;
+  bottom: 120px;
+  text-align: center;
+  width: 20px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow:1px 2px 3px #999999;
+}
