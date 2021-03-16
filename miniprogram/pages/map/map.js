@@ -8,6 +8,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    occurpyProblemNumber:2,
+    errorProblemNumber:1,
+    designProblemNumber:3,
     longitude: config.center_longitude,
     latitude: config.center_latitude,
     windowHeight: 600,
@@ -182,6 +185,11 @@ Page({
         //   }
         // })
       });
+  },
+  addOccurpy:function(){
+    this.setData({
+      occurpyProblemNumber:this.data.occurpyProblemNumber+1
+    })
   },
   hideMe: function (res) {
     this.setData({

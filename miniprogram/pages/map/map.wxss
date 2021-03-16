@@ -1,84 +1,122 @@
-map{
+map {
   width: 750rpx;
 }
-.show_all{
-  position: absolute;
-  right: 100rpx;
-  bottom: 100rpx;
-  color: #7795f8;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
-}
-.cover{
-  color: #fff;
-  height: 100rpx;
-  width: 220rpx;
-  line-height: 100rpx;
-  font-size: 35rpx;
-  text-align: center;
-  position: absolute;
-  left: 100rpx;
-  bottom: 100rpx;
-  border-radius: 50rpx;
-  text-shadow: 0 1px 3px rgba(36,180,126,.4);
-}
-.add_me{
-  font-size:30rpx;
+
+/* 顶部添加我的小程序提示 */
+.add_me {
+  font-size: 30rpx;
   color: #fff;
   background-color: rgb(62, 207, 142);
   width: 450rpx;
-  padding:20rpx;
+  padding: 20rpx;
   position: absolute;
   right: 10rpx;
-  top:20rpx;
+  top: 20rpx;
   text-align: center;
 }
-.up{
+
+.nav{
   position: absolute;
-  right:150rpx;
-  top:5rpx;
-  border-right:20rpx solid transparent;
-	border-left:20rpx solid transparent;
-	border-bottom:20rpx solid rgb(62, 207, 142);
+  left: calc(50% - 140px);
+  bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50rpx;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
+
+/* 底部导航栏 */
+.nav-tabbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-tabbar-image{
+  width: 18px;
+  height: 19px;
+}
+
+
+/* .nav-tabbar-left{
+  position: absolute;
+  left: calc(50% - 140px);
+  bottom: 0px;
+}
+
+.nav-tabbar-center{
+  position: absolute;
+  left: calc(50% - 30px);
+  bottom: 0px;
+
+}
+
+.nav-tabbar-right{
+  position: absolute;
+  left: calc(50% + 30px);
+  bottom: 0px;
+} */
+
+.nav-button {
+  height: 100rpx;
+  width: 220rpx;
+  font-size: 35rpx;
+  text-align: center;
+  color: #7795f8;
+  background-color: rgb(255, 255, 255);
+  line-height: 100rpx;
+}
+
+.add{
+  width: 60px;
+  height: 60px;
+  font-size: 35rpx;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  background-color: #0079e7;
+  border-radius: 50%;
+  overflow:hidden;
+}
+
 
 /* 中心标记点 */
 .center {
-  width:32px;
-  height:40px;
+  width: 32px;
+  height: 40px;
   margin: 0 auto;
   position: relative;
-  top: calc( 50% - 40px );
+  top: calc(50% - 40px);
 }
 
 /* 问题列表 */
-.numberList{
+.numberList {
   position: absolute;
   right: 12px;
   top: 60px;
   text-align: center;
 }
 
-.numberList-item{
+.numberList-item {
   display: flex;
   flex-direction: row;
   background-color: #fff;
   justify-content: center;
   align-items: center;
   padding: 10px 5px 10px 4px;
-  box-shadow:2px 1px 3px #999999;
+  box-shadow: 2px 1px 3px #999999;
 }
 
-.numberList-item-image{
+.numberList-item-image {
   width: 30px;
   margin-right: 5px;
 }
 
-.numberList-item-text{
+.numberList-item-text {
   font-size: 14px;
 }
 
-.getLocation{
+.getLocation {
   position: absolute;
   left: 12px;
   bottom: 120px;
@@ -86,5 +124,5 @@ map{
   width: 20px;
   background-color: #fff;
   padding: 10px;
-  box-shadow:1px 2px 3px #999999;
+  box-shadow: 1px 2px 3px #999999;
 }
