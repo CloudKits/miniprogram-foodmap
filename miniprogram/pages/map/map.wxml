@@ -32,13 +32,13 @@
     </cover-view>
   </cover-view>
   <!-- 定位 -->
-  <cover-view class="getLocation" bindtap="onLoad">
+  <cover-view class="getLocation" bindtap="getCenterLocation">
     <cover-image src="/images/home/getLocation.png"></cover-image>
   </cover-view>
   <cover-view class="nav">
     <cover-view class="nav-tabbar">
       <!-- 上传新增 -->
-      <cover-view class="nav-tabbar-left nav-button" bindgetuserinfo='addMarker'>
+      <cover-view class="nav-tabbar-left nav-button" bindtap='addMarker'>
         <cover-image class="nav-tabbar-image" src="/images/nav/article.png"></cover-image>
         <cover-view>盲道科普</cover-view>
       </cover-view>

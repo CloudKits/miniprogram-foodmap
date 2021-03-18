@@ -8,9 +8,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    occurpyProblemNumber:2,
-    errorProblemNumber:1,
-    designProblemNumber:3,
+    stores: {},
+    occurpyProblemNumber: 2,
+    errorProblemNumber: 1,
+    designProblemNumber: 3,
     longitude: config.center_longitude,
     latitude: config.center_latitude,
     windowHeight: 600,
@@ -36,17 +37,22 @@ Page({
       let data = res.data;
       // 将 _id 给 id ,确保 marker 事件的正确触发
       data.map((item) => {
+        const label = item.label;
         item.id = item._id;
+        item.width = 20;
+        item.height = 25;
+        item.label = { content: label, color: "#24292e", fontSize: 12 };
       });
       this.setData(
         {
-          stores: res.data,
+          stores: data,
           windowHeight: app.globalData.windowHeight,
           hideMe: false,
           showAdmin: showAdmin,
           defaultScale: config.default_scale,
         },
         () => {
+          console.log("markers", this.data.stores);
           wx.hideLoading();
           wx.showToast({
             title: "双指缩放可以调整地图可视区域，查看更多美食",
@@ -55,10 +61,9 @@ Page({
         }
       );
     });
-
     this.getOpenID();
     this.getCenterLocation();
-    this.mapCtx = wx.createMapContext("map");
+    this.data.mapCtx = wx.createMapContext("map");
   },
 
   onShow: function () {
@@ -141,8 +146,8 @@ Page({
       success: (res) => {
         this.setData({
           longitude: res.longitude,
-          latitude: res.latitude
-        })
+          latitude: res.latitude,
+        });
         console.log(
           "当前中心点的位置：",
           this.data.longitude,
@@ -150,6 +155,10 @@ Page({
         );
       },
       fail: (err) => {
+        wx.showToast({
+          title: "请确认你的手机GPS定位已经打开",
+          icon: "fail",
+        });
         console.log("err", err);
       },
     });
@@ -186,10 +195,10 @@ Page({
         // })
       });
   },
-  addOccurpy:function(){
+  addOccurpy: function () {
     this.setData({
-      occurpyProblemNumber:this.data.occurpyProblemNumber+1
-    })
+      occurpyProblemNumber: this.data.occurpyProblemNumber + 1,
+    });
   },
   hideMe: function (res) {
     this.setData({

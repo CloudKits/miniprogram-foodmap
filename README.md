@@ -70,6 +70,10 @@
 
 您可以访问[CHANGELOG](CHANGELOG)查看项目迭代情况
 
+## 注意事项：
+
+1. 基础库要>2.15.0才会在地图显示中心点标记
+2. marker对象中的label不能是一个字符串 应该是一个对象 不然会在高版本基础库上真机不显示marker
 ## LICENSE
 
 本项目基于 Apache License 2.0 开放源代码授权 
