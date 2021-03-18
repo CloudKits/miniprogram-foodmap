@@ -1,24 +1,52 @@
-page{
-  background-color: #eee;
+page {
+  background-color: #ffffff;
 }
 
-.desc{
-  padding: 20rpx;
+.form {
+  padding: 20px;
 }
-.loactionGroup{
-  padding: 10rpx;
+
+.form-item {
+  margin-bottom: 18px;
+}
+
+.item-title {
+  padding: 20rpx 20rpx 20rpx 0;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.item-desc {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #adadad;
+}
+
+.loactionGroup {
   display: flex;
   flex-direction: row;
 }
-input{
-  background-color: #fff;
-  padding: 20rpx;
+
+.loactionGroup input {
+  width: 80%;
+  margin-right: 18px;
 }
-textarea{
-  background-color: #fff;
+
+input {
+  border: 1px solid #dededd;
   padding: 20rpx;
-  width:  710rpx;
+  width: 80%;
 }
-.submit{
+
+textarea {
+  border: 1px solid #dededd;
+  padding: 20rpx;
+  width: 90%;
+}
+
+.submit {
   margin-top: 40rpx;
+  width: 100%;
+  background-color: #007ae7;
+  color: #ffffff;
 }

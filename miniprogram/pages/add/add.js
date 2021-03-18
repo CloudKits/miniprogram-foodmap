@@ -5,7 +5,11 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    label: "",
+    images: [],
+    imagesTempUrl: [],
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -83,6 +87,30 @@ Page({
         console.error(error);
       });
   },
+
+  getImageUrl: function (fileList) {
+    wx.cloud.getTempFileURL({
+      fileList,
+      success: (res) => {
+        const imagesTempUrl = this.data.imagesTempUrl;
+        res.fileList.forEach((item) => {
+          if (item.tempFileURL)
+            imagesTempUrl.push({
+              url: item.tempFileURL,
+              isImage: true,
+              deletable: false,
+            });
+        });
+        this.setData({
+          imagesTempUrl,
+        });
+      },
+      fail: (err) => {
+        console.log("id转换为临时链接失败", err);
+      },
+    });
+  },
+
   uploadImage: function (e) {
     wx.chooseImage({
       count: 9,
@@ -105,9 +133,16 @@ Page({
             for (const file of result) {
               urls.push(file.fileID);
             }
+
+            this.getImageUrl(urls);
+
+            const images = this.data.images;
+
+            images.push(...urls);
+
             this.setData(
               {
-                images: urls,
+                images,
               },
               (res) => {
                 wx.hideLoading();
@@ -130,6 +165,12 @@ Page({
         Math.random(0, 1) * 10000000
       )}.png`,
       filePath,
+    });
+  },
+
+  onChangeRadio(event) {
+    this.setData({
+      label: event.detail,
     });
   },
 });

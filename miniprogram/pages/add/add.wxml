@@ -1,15 +1,37 @@
-<form report-submit='true' onsubmit="createItem">
-  <view class='desc'>位置标记</view>
-  <view class="loactionGroup">
-    <button bindtap='chooseLocation' type='primary'>地图选址</button>
-  </view>
-  <view class='desc'>问题描述</view>
-  <input placeholder='建议以：附近关键地点+故障问题描述' name="title" value='{{problem}}'></input>
-  <view class='desc'>地址设定</view>
-  <input placeholder='定位后会自动标记' name="address" value='{{address}} {{name}}'></input>
-  <view class='desc'>图片上传</view>
-  <button bindtap='uploadImage'>点我选择照片</button>
-  <view class='desc'>问题分类</view>
-  <input placeholder='比如，盲道占用，盲道破损，盲道设计有问题' name="keywords" value='{{price_per}}'></input>
-  <button class='submit' type="primary" form-type='submit'>创建</button>
-</form>
+<view class="form" report-submit='true' onsubmit="createItem">
+  <form report-submit='true' onsubmit="createItem">
+    <view class="form-item">
+      <view class='item-title'>当前定位</view>
+      <view class="loactionGroup">
+        <input placeholder='定位后会自动标记' name="address" value='{{address}} {{name}}'></input>
+        <van-icon name="location-o" size="25px" bindtap='chooseLocation' />
+      </view>
+    </view>
+    <view class="form-item">
+      <view class='item-title'>盲道问题</view>
+      <van-radio-group value='{{label}}' bind:change="onChangeRadio" class="radio">
+        <van-row>
+          <van-col span="8">
+            <van-radio name="盲道占用">盲道占用</van-radio>
+          </van-col>
+          <van-col span="8">
+            <van-radio name="盲道破损">盲道破损</van-radio>
+          </van-col>
+          <van-col span="8">
+            <van-radio name="盲道设计">盲道设计</van-radio>
+          </van-col>
+        </van-row>
+      </van-radio-group>
+    </view>
+    <view class="form-item">
+      <view class='item-title'>图片上传</view>
+      <view class="item-desc">请上传两张完整且清晰的盲道问题图片</view>
+      <van-uploader file-list="{{ imagesTempUrl }}" disabled="true" bindtap="uploadImage"/>
+    </view>
+    <view class="form-item">
+      <view class='item-title'>文字描述</view>
+      <textarea placeholder='请简要描述盲道问题....' name="title" value='{{problem}}'></textarea>
+    </view>
+    <button class='submit' form-type='submit'>提交</button>
+  </form>
+</view>

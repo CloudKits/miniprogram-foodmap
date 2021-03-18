@@ -9,14 +9,25 @@
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#007ae7",
     "navigationBarTitleText": "友好盲道地图",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "permission": {
     "scope.userLocation": {
       "desc": "你的位置信息将用于确定当前地图中心点"
     }
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-panel": "@vant/weapp/panel/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-uploader": "@vant/weapp/uploader/index"
+  }
 }

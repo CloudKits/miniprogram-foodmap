@@ -1,12 +1,5 @@
-@import "vendor/fontawesome.wxss";
-.button {
-  color: #fff;
-  height: 100rpx;
-  width: 220rpx;
-  line-height: 100rpx;
-  font-size: 35rpx;
-  text-align: center;
-  background-color: rgb(62, 207, 142);
-  border-radius: 50rpx;
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
 }
