@@ -173,11 +173,13 @@ Page({
       imageUrl: "/images/share.jpg",
     };
   },
+
   onMarkerTap: function (event) {
     wx.navigateTo({
       url: "../info/info?id=" + event.markerId,
     });
   },
+
   getOpenID: function (event) {
     wx.cloud
       .callFunction({

@@ -4,7 +4,7 @@
 
 ### macOS ###
 # General
-.DS_Store
+*.DS_Store
 .AppleDouble
 .LSOverride
 
@@ -66,8 +66,9 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
-jspm_packages/
+node_modules
+miniprogram/miniprogram_npm
+package-lock.json
 
 # TypeScript v1 declaration files
 typings/
