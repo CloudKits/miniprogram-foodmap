@@ -3,7 +3,7 @@
     <view class="form-item">
       <view class='item-title'>当前定位</view>
       <view class="loactionGroup">
-        <input placeholder='定位后会自动标记' name="address" value='{{address}} {{name}}'></input>
+        <input placeholder='定位后会自动标记' name="address" value='{{address}}'></input>
         <van-icon name="location-o" size="25px" bindtap='chooseLocation' />
       </view>
     </view>
@@ -26,11 +26,11 @@
     <view class="form-item">
       <view class='item-title'>图片上传</view>
       <view class="item-desc">请上传两张完整且清晰的盲道问题图片</view>
-      <van-uploader file-list="{{ imagesTempUrl }}" disabled="true" bindtap="uploadImage"/>
+      <van-uploader file-list="{{ imagesTempUrl }}" disabled="true" bindtap="uploadImage" />
     </view>
     <view class="form-item">
       <view class='item-title'>文字描述</view>
-      <textarea placeholder='请简要描述盲道问题....' name="title" value='{{problem}}'></textarea>
+      <textarea placeholder='请简要描述盲道问题....' name="content" value='{{content}}'></textarea>
     </view>
     <button class='submit' form-type='submit'>提交</button>
   </form>

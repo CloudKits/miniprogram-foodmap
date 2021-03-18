@@ -9,6 +9,8 @@ Page({
     label: "",
     images: [],
     imagesTempUrl: [],
+    content: "",
+    iconPath: "",
   },
 
   /**
@@ -26,10 +28,9 @@ Page({
               wx.chooseLocation({
                 success: (res) => {
                   this.setData({
-                    address: res.address,
+                    address: `${res.address} ${res.name}`,
                     latitude: res.latitude,
                     longitude: res.longitude,
-                    name: res.name,
                   });
                 },
               });
@@ -39,10 +40,9 @@ Page({
           wx.chooseLocation({
             success: (res) => {
               this.setData({
-                address: res.address,
+                address: `${res.address}+${res.name}`,
                 latitude: res.latitude,
                 longitude: res.longitude,
-                name: res.name,
               });
             },
           });
@@ -55,22 +55,17 @@ Page({
     wx.showLoading({
       title: "上传数据中...",
     });
-    let value = event.detail.value;
-    let label = value.title;
-    let iconPath = "/images/marker/error.png";
-    if (label === "盲道占用") iconPath = "/images/marker/occupy.png";
-    if (label === "盲道设计问题") iconPath = "/images/marker/design.png";
 
     store
       .add({
         data: {
-          ...value,
-          thumbs_up: 1,
+          address: this.data.address,
           longitude: this.data.longitude,
           latitude: this.data.latitude,
-          label,
-          iconPath,
+          label: this.data.label,
+          iconPath: this.data.iconPath,
           images: this.data.images,
+          content: event.detail.value.content,
         },
       })
       .then((res) => {
@@ -79,7 +74,9 @@ Page({
           title: "创建成功！",
           icon: "success",
           success: (res) => {
-            wx.navigateBack({});
+            wx.navigateTo({
+              url: "../map/map",
+            });
           },
         });
       })
@@ -169,8 +166,24 @@ Page({
   },
 
   onChangeRadio(event) {
+    const label = event.detail;
+    let iconPath = "";
+    switch (label) {
+      case "盲道占用":
+        iconPath = "/images/marker/occupy.png";
+        break;
+
+      case "盲道设计":
+        iconPath = "/images/marker/design.png";
+        break;
+
+      default:
+        iconPath = "/images/marker/error.png";
+        break;
+    }
     this.setData({
-      label: event.detail,
+      label,
+      iconPath,
     });
   },
 });
