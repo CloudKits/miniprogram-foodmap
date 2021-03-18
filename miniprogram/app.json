@@ -4,7 +4,8 @@
     "pages/list/list",
     "pages/info/info",
     "pages/add/add",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/share/share"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

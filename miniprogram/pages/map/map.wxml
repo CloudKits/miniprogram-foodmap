@@ -43,8 +43,8 @@
         <cover-view>盲道科普</cover-view>
       </cover-view>
       <!-- 上传新增 -->
-      <cover-view class="nav-tabbar-center add">
-        <cover-image class="nav-tabbar-image" src="/images/nav/add.png" open-type='getUserInfo' bindtap='addMarker'></cover-image>
+      <cover-view class="nav-tabbar-center add" bindtap='addMarker'>
+        <cover-image class="nav-tabbar-image" src="/images/nav/add.png" open-type='getUserInfo'></cover-image>
         <cover-view>上传</cover-view>
       </cover-view>
       <!-- 查看全部 -->

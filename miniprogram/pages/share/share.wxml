@@ -1,0 +1,1 @@
+<canvasdrawer painting="{{painting}}" bind:getImage="eventGetImage"/>

@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    label: "",
+    problemLabel: "",
     images: [],
     imagesTempUrl: [],
     content: "",
@@ -62,7 +62,7 @@ Page({
           address: this.data.address,
           longitude: this.data.longitude,
           latitude: this.data.latitude,
-          label: this.data.label,
+          problemLabel: this.data.problemLabel,
           iconPath: this.data.iconPath,
           images: this.data.images,
           content: event.detail.value.content,
@@ -166,9 +166,9 @@ Page({
   },
 
   onChangeRadio(event) {
-    const label = event.detail;
+    const problemLabel = event.detail;
     let iconPath = "";
-    switch (label) {
+    switch (problemLabel) {
       case "盲道占用":
         iconPath = "/images/marker/occupy.png";
         break;
@@ -182,7 +182,7 @@ Page({
         break;
     }
     this.setData({
-      label,
+      problemLabel,
       iconPath,
     });
   },

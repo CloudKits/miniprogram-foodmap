@@ -9,7 +9,7 @@
     </view>
     <view class="form-item">
       <view class='item-title'>盲道问题</view>
-      <van-radio-group value='{{label}}' bind:change="onChangeRadio" class="radio">
+      <van-radio-group value='{{problemLabel}}' bind:change="onChangeRadio" class="radio">
         <van-row>
           <van-col span="8">
             <van-radio name="盲道占用">盲道占用</van-radio>

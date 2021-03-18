@@ -18,6 +18,8 @@ Page({
     mapSubKey: config.mapSubKey,
     hideMe: true,
     showAdmin: false,
+    windowHeight: app.globalData.windowHeight,
+    defaultScale: config.default_scale,
   },
 
   /**
@@ -29,53 +31,76 @@ Page({
     if (app.globalData.showAdmin) {
       showAdmin = true;
     }
-
-    wx.showLoading({
-      title: "数据加载中...",
-    });
-    store.get().then((res) => {
-      let data = res.data;
-      // 将 _id 给 id ,确保 marker 事件的正确触发
-      data.map((item) => {
-        const label = item.label;
-        item.id = item._id;
-        item.width = 20;
-        item.height = 25;
-        item.label = { content: label, color: "#24292e", fontSize: 12 };
-      });
-      this.setData(
-        {
-          stores: data,
-          windowHeight: app.globalData.windowHeight,
-          hideMe: false,
-          showAdmin: showAdmin,
-          defaultScale: config.default_scale,
-        },
-        () => {
-          console.log("markers", this.data.stores);
-          wx.hideLoading();
-          wx.showToast({
-            title: "双指缩放可以调整地图可视区域，查看更多美食",
-            icon: "none",
-          });
-        }
-      );
+    this.setData({
+      showAdmin: showAdmin,
     });
     this.getOpenID();
     this.getCenterLocation();
+    this.getMarkerData();
     this.data.mapCtx = wx.createMapContext("map");
+    wx.showToast({
+      title: "双指缩放可以调整地图可视区域",
+      icon: "none",
+    });
   },
 
+  /**
+   * 生命周期函数--监听页面的显示
+   */
+
   onShow: function () {
-    // #10 添加完成后更新一下 map
+    this.getMarkerData();
+  },
+
+  getMarkerData: function () {
+    wx.showLoading({
+      title: "数据加载中...",
+    });
+
     store.get().then((res) => {
       let data = res.data;
+      /**
+       * 处理 occurpyProblemNumber,errorProblemNumber,designProblemNumber
+       */
+      let occurpyProblemNumber = 0;
+      let errorProblemNumber = 0;
+      let designProblemNumber = 0;
+      res.data.forEach((item) => {
+        if (item.label === "盲道破损") {
+          errorProblemNumber++;
+        } else if (item.label === "盲道占用") {
+          occurpyProblemNumber++;
+        } else if (item.label === "盲道设计") {
+          designProblemNumber++;
+        }
+      });
+
+      this.setData({
+        occurpyProblemNumber,
+        errorProblemNumber,
+        designProblemNumber,
+      });
+
+      /***
+       * 处理marker
+       * 将 _id 给 id ,确保 marker 事件的正确触发
+       */
       data.map((item) => {
         item.id = item._id;
+        item.width = 20;
+        item.height = 25;
+        item.title = item.problemLabel;
+        // const label = item.label;
+        // item.label = { content: label, color: "#24292e", fontSize: 12 };
+        // item.label = { content: "", color: "#24292e", fontSize: 12 };
       });
       this.setData({
-        stores: res.data,
-      });
+          stores: data,
+        },
+        () => {
+          wx.hideLoading();
+        }
+      );
     });
   },
 
@@ -168,7 +193,17 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: "我在" + config.appName + "上发现了好吃的，你也看看吧！",
+      title: "我在" + config.appName + "上标记了一处盲道问题，你也快来加入我们吧",
+      path: "/pages/map/map",
+      imageUrl: "/images/share.jpg",
+    };
+  },
+  /**
+   * 用户分享到朋友圈
+   */
+  onShareTimeline: function () {
+    return {
+      title: "我在" + config.appName + "上标记了一处盲道问题，你也快来加入我们吧",
       path: "/pages/map/map",
       imageUrl: "/images/share.jpg",
     };
