@@ -5,7 +5,6 @@
     "pages/info/info",
     "pages/add/add",
     "pages/search/search",
-    "pages/share/share",
     "pages/poster/poster"
   ],
   "window": {
@@ -30,7 +29,6 @@
     "van-radio-group": "@vant/weapp/radio-group/index",
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
-    "van-uploader": "@vant/weapp/uploader/index",
-    "canvasdrawer": "/components/canvasdrawer/canvasdrawer"
+    "van-uploader": "@vant/weapp/uploader/index"
   }
 }
