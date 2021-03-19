@@ -1,0 +1,55 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "全部内容",
+          "pathName": "pages/list/list",
+          "query": ""
+        },
+        {
+          "id": 1,
+          "name": "商铺详情",
+          "pathName": "pages/info/info",
+          "query": "id=XE0cj8DR1TiNzjpY",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "新增数据",
+          "pathName": "pages/add/add",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "搜索页面",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "分享页",
+          "pathName": "pages/share/share",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "海报页",
+          "pathName": "pages/poster/poster",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

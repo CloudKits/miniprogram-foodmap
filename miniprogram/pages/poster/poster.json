@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "share-box": "/components/shareBox/index"
+  }
+}

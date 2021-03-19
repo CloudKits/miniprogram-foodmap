@@ -1,1 +1,9 @@
-<canvasdrawer painting="{{painting}}" bind:getImage="eventGetImage"/>
+<!--index.wxml-->
+<view class="container">
+  <image src="{{shareImage}}" class="share-image"></image>
+  <canvasdrawer painting="{{painting}}" class="canvasdrawer" bind:getImage="eventGetImage"/>
+
+  <button bind:tap="eventDraw">绘制</button>
+  <button bind:tap="eventSave">保存到本地</button>
+  <button open-type='getUserInfo' lang="zh_CN" bindgetuserinfo="onGotUserInfo">获取昵称</button>
+</view>

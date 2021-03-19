@@ -1,0 +1,10 @@
+.intro {
+  width: 686rpx;
+  height: 88rpx;
+  background: #00cc88;
+  color: #FFF;
+  border-radius: 16rpx;
+  font-size: 32rpx;
+  text-align: center;
+  margin: 200rpx auto;
+}

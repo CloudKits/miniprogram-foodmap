@@ -1,0 +1,4 @@
+<button class="intro" open-type="getUserInfo" bindgetuserinfo="getUserInfo" wx:if="{{!nickName}}">点我获取分享图头像昵称</button>
+<button class="intro" bindtap="createShareImage" wx:else>点我生成分享图</button>
+
+<share-box isCanDraw="{{isCanDraw}}" bind:initData="createShareImage" />
