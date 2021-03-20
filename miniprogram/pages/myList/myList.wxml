@@ -1,0 +1,74 @@
+<view class="userInfo">
+    <view class="userAvatar">
+        <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data type="userNickName" class="userName" lang="zh_CN"></open-data>
+</view>
+<view class="divider"></view>
+<view class="isEmpty" wx:if="{{!isEmpty}}">
+    <image class="isEmpty-image" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/icon/isEmpty.png?sign=ce735d6a48007dacd83ab5d611d00759&t=1616208228"></image>
+    <view>你还没有日志记录哦</view>
+    <view>快去上传吧~</view>
+</view>
+<view class="myList" wx:else>
+    <view class="item">
+        <view class="item-top">
+            <view class="item-icon"></view>
+            <view class="item-title">2020年1月1日</view>
+        </view>
+        <view class="item-bottom">
+            <view class="item-address">
+                <van-icon name="location-o" color="#007ae7" />
+                深圳时南山区粤海街道36688号门
+            </view>
+            <view class="item-content">你第一次上传了盲道问题，帮助了友好地图的修筑。</view>
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-top">
+            <view class="item-icon"></view>
+            <view class="item-title">2020年1月1日</view>
+        </view>
+        <view class="item-bottom">
+            <view class="item-address">
+                <van-icon name="location-o" color="#007ae7" />
+                深圳时南山区粤海街道36688号门
+            </view>
+            <view class="item-content">你第一次上传了盲道问题，帮助了友好地图的修筑。</view>
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-top">
+            <view class="item-icon"></view>
+            <view class="item-title">2020年1月1日</view>
+        </view>
+        <view class="item-bottom">
+            <view class="item-address">
+                <van-icon name="location-o" color="#007ae7" />
+                深圳时南山区粤海街道36688号门
+            </view>
+            <view class="item-content">你第一次上传了盲道问题，帮助了友好地图的修筑。</view>
+        </view>
+    </view>
+    <view class="item">
+        <view class="item-top">
+            <view class="item-icon"></view>
+            <view class="item-title">2020年1月1日</view>
+        </view>
+        <view class="item-bottom">
+            <view class="item-address">
+                <van-icon name="location-o" color="#007ae7" />
+                深圳时南山区粤海街道36688号门
+            </view>
+            <view class="item-content">你第一次上传了盲道问题，帮助了友好地图的修筑。</view>
+            <swiper wx:if="{{images.length}}" class="item-swiper" indicator-dots="true" autoplay="true" interval="{{5000}}" duration="{{1000}}">
+                <swiper-item wx:for="{{images}}" wx:key="id">
+                    <image class="item-images" mode="aspectFill" src="{{item.url}}" data-url="{{item.url}}"/>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+    <van-divider contentPosition="center" customStyle="font-size:12px;color: #c9c9c9;margin-bottom:50px;">
+        已展示全部数据
+    </van-divider>
+</view>

@@ -5,7 +5,8 @@
     "pages/info/info",
     "pages/add/add",
     "pages/search/search",
-    "pages/poster/poster"
+    "pages/poster/poster",
+    "pages/myList/myList"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -29,6 +30,7 @@
     "van-radio-group": "@vant/weapp/radio-group/index",
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index",
-    "van-uploader": "@vant/weapp/uploader/index"
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-divider": "@vant/weapp/divider/index"
   }
 }

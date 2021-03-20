@@ -1,0 +1,111 @@
+/* miniprogram/pages/myList/myList.wxss */
+page {
+    overflow: scroll;
+}
+
+.userInfo {
+    background-color: #ffffff;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userName {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.userAvatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0px 1px 5px #c9c6c6;
+}
+
+.divider {
+    border: 3px solid #f7f6fc;
+}
+
+
+.isEmpty {
+    background-color: #ffffff;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #c9c9c9;
+    font-size: 14px;
+    padding-top: 60px;
+}
+
+.isEmpty-image {
+    width: 150px;
+    height: 150px;
+}
+
+
+/* 日志卡片 */
+
+.item-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 20px 0 20px;
+}
+
+.item-icon {
+    width: 8px;
+    height: 8px;
+    background-color: #007ae7;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.item-title {
+    font-size: 20px;
+}
+
+.item-bottom {
+    border-left: 1px solid #dedede;
+    margin-left: 24px;
+    padding-left: 15px;
+    padding-bottom: 6px;
+}
+
+.item-address {
+    height: 26px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 14px;
+    font-size: 12px;
+    color: #d8d8d8;
+    margin-bottom: 6px;
+}
+
+.item-content {
+    line-height: 16px;
+    font-size: 14px;
+    padding-bottom: 6px;
+}
+
+.item-swiper {
+    margin: 5px 0px 0px 0px;
+    padding-bottom: 5px;
+    width: 300px;
+    height: 200px;
+}
+
+/* .item-images {
+    width: 250px;
+    height: 200px;
+} */

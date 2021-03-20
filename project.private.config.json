@@ -47,6 +47,12 @@
         {
           "name": "海报页",
           "pathName": "pages/poster/poster",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的筑路日志",
+          "pathName": "pages/myList/myList",
           "scene": null
         }
       ]
