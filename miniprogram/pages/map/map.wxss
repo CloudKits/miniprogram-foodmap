@@ -135,3 +135,7 @@ map {
   padding: 10px;
   box-shadow: 1px 2px 3px #999999;
 }
+
+.introduction-image{
+  width: 750rpx;
+}

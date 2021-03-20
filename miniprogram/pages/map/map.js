@@ -20,6 +20,7 @@ Page({
     showAdmin: false,
     windowHeight: app.globalData.windowHeight,
     defaultScale: config.default_scale,
+    isShowIntroduction: true,
   },
 
   /**
@@ -94,7 +95,8 @@ Page({
         // item.label = { content: label, color: "#24292e", fontSize: 12 };
         // item.label = { content: "", color: "#24292e", fontSize: 12 };
       });
-      this.setData({
+      this.setData(
+        {
           stores: data,
         },
         () => {
@@ -110,9 +112,21 @@ Page({
     });
   },
 
+  viewMyList: function () {
+    wx.navigateTo({
+      url: "../myList/myList",
+    });
+  },
+
   addMarker: function () {
     wx.navigateTo({
       url: "../add/add",
+    });
+  },
+
+  goArticle: function () {
+    wx.navigateTo({
+      url: "../article/article",
     });
   },
 
@@ -193,7 +207,8 @@ Page({
    */
   onShareAppMessage: function () {
     return {
-      title: "我在" + config.appName + "上标记了一处盲道问题，你也快来加入我们吧",
+      title:
+        "我在" + config.appName + "上标记了一处盲道问题，你也快来加入我们吧",
       path: "/pages/map/map",
       imageUrl: "/images/share.jpg",
     };
@@ -203,7 +218,8 @@ Page({
    */
   onShareTimeline: function () {
     return {
-      title: "我在" + config.appName + "上标记了一处盲道问题，你也快来加入我们吧",
+      title:
+        "我在" + config.appName + "上标记了一处盲道问题，你也快来加入我们吧",
       path: "/pages/map/map",
       imageUrl: "/images/share.jpg",
     };
@@ -255,5 +271,10 @@ Page({
     wx.navigateTo({
       url: "../search/search",
     });
+  },
+
+  onCloseIntroduction() {
+    console.log("关闭新手引导");
+    this.setData({ isShowIntroduction: false });
   },
 });

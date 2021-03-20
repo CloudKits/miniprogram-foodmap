@@ -1,3 +1,7 @@
+<!-- 新手引导弹出层 -->
+<van-popup closeable close-icon="close" show="{{ isShowIntroduction }}" bind:close="onCloseIntroduction">
+  <image class="introduction-image" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/introduction/introduction.jpg?sign=1f8a2d647cacd20c63cea2d4977b5f8d&t=1616225044" mode="widthFix"></image>
+</van-popup>
 <map id="map" longitude='{{longitude}}' latitude='{{latitude}}' style='height:{{windowHeight}}px' markers="{{stores}}" subkey="{{mapSubKey}}" bindmarkertap="onMarkerTap" show-location="true" enable-building="true" enable-3D="true">
   <!-- 中心点标记点 -->
   <!-- <cover-view class="center">
@@ -38,7 +42,7 @@
   <cover-view class="nav">
     <cover-view class="nav-tabbar">
       <!-- 上传新增 -->
-      <cover-view class="nav-tabbar-left nav-button" bindtap='addMarker'>
+      <cover-view class="nav-tabbar-left nav-button" bindtap='goArticle'>
         <cover-image class="nav-tabbar-image" src="/images/nav/article.png"></cover-image>
         <cover-view>盲道科普</cover-view>
       </cover-view>
@@ -48,7 +52,7 @@
         <cover-view>上传</cover-view>
       </cover-view>
       <!-- 查看全部 -->
-      <cover-view class="nav-tabbar-right nav-button" bindtap="viewAll" bindlongpress='showAdmin'>
+      <cover-view class="nav-tabbar-right nav-button" bindtap="viewMyList" bindlongpress='showAdmin'>
         <cover-image class="nav-tabbar-image" src="/images/nav/list.png"></cover-image>
         <cover-view>筑路日志</cover-view>
       </cover-view>

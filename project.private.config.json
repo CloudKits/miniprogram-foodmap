@@ -53,6 +53,13 @@
         {
           "name": "我的筑路日志",
           "pathName": "pages/myList/myList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "盲道科普",
+          "pathName": "pages/article/article",
+          "query": "",
           "scene": null
         }
       ]

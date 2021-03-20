@@ -1,0 +1,5 @@
+<view>
+    <image mode="widthFix" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/article/article1.jpg?sign=bc9d9b30da59b3bd87cc398c8f91a561&t=1616223683"></image>
+    <image mode="widthFix" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/article/article2.jpg?sign=bc9d9b30da59b3bd87cc398c8f91a561&t=1616223683"></image>
+    <image mode="widthFix" src="https://6d61-map-4g0ciu1x80002ab0-1305236624.tcb.qcloud.la/article/article3.jpg?sign=bc9d9b30da59b3bd87cc398c8f91a561&t=1616223683"></image>
+</view>

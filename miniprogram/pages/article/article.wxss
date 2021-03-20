@@ -1,0 +1,9 @@
+page {
+    background-color: #c8e2f9;
+}
+
+image {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
