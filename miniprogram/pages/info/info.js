@@ -1,4 +1,3 @@
-const mta = require('../../vendor/mta_analysis.js');
 const app = getApp();
 const db = wx.cloud.database()
 const store = db.collection('store');
@@ -19,7 +18,6 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    mta.Page.init();
     store.doc(options.id).get().then(res => {
       if (config.dynamic_title){
         wx.setNavigationBarTitle({
