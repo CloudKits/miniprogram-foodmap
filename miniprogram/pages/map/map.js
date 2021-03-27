@@ -151,16 +151,6 @@ Page({
       },
     });
   },
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    return {
-      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
-      path: '/pages/map/map',
-      imageUrl: "/images/share.jpg"
-    }
-  },
   onMarkerTap: function (event) {
     wx.navigateTo({
       url: '../info/info?id=' + event.markerId,
@@ -198,5 +188,25 @@ Page({
     wx.navigateTo({
       url: '../search/search',
     })
-  }
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
+      path: '/pages/map/map',
+      imageUrl: "/images/share.jpg"
+    }
+  },
+  /**
+   * 用户分享到朋友圈
+   */
+  onShareTimeline: function () {
+    return {
+      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
+      path: '/pages/map/map',
+      imageUrl: "/images/share.jpg"
+    }
+  },
 })
