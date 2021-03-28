@@ -1,15 +1,17 @@
-map{
+map {
   width: 750rpx;
 }
-.show_all{
+
+.show_all {
   position: absolute;
   right: 100rpx;
   bottom: 100rpx;
   color: #7795f8;
   background-color: rgb(255, 255, 255);
-  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
 }
-.cover{
+
+.cover {
   color: #fff;
   height: 100rpx;
   width: 220rpx;
@@ -20,24 +22,37 @@ map{
   left: 100rpx;
   bottom: 100rpx;
   border-radius: 50rpx;
-  text-shadow: 0 1px 3px rgba(36,180,126,.4);
+  text-shadow: 0 1px 3px rgba(36, 180, 126, .4);
 }
-.add_me{
-  font-size:30rpx;
+
+.add_me {
+  font-size: 30rpx;
   color: #fff;
   background-color: rgb(62, 207, 142);
   width: 450rpx;
-  padding:20rpx;
+  padding: 20rpx;
   position: absolute;
   right: 10rpx;
-  top:20rpx;
+  top: 20rpx;
   text-align: center;
 }
-.up{
+
+.up {
   position: absolute;
-  right:150rpx;
-  top:5rpx;
-  border-right:20rpx solid transparent;
-	border-left:20rpx solid transparent;
-	border-bottom:20rpx solid rgb(62, 207, 142);
+  right: 150rpx;
+  top: 5rpx;
+  border-right: 20rpx solid transparent;
+  border-left: 20rpx solid transparent;
+  border-bottom: 20rpx solid rgb(62, 207, 142);
+}
+
+.getLocation {
+  position: absolute;
+  left: 12px;
+  bottom: 120px;
+  text-align: center;
+  width: 20px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 1px 2px 3px #999999;
 }

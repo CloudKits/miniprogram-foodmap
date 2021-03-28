@@ -14,8 +14,8 @@ Page({
     latitude: config.center_latitude,
     windowHeight: 600,
     mapSubKey: config.mapSubKey,
-    hideMe:true,
-    showAdmin:false,
+    hideMe: true,
+    showAdmin: false,
   },
 
   /**
@@ -23,7 +23,7 @@ Page({
    */
   onLoad: function (options) {
 
-    let showAdmin = config.show_admin?true:false;
+    let showAdmin = config.show_admin ? true : false;
 
     if (app.globalData.showAdmin) {
       showAdmin = true;
@@ -41,7 +41,7 @@ Page({
       this.setData({
         stores: res.data,
         windowHeight: app.globalData.windowHeight,
-        hideMe:false,
+        hideMe: false,
         showAdmin: showAdmin,
         defaultScale: config.default_scale
       }, () => {
@@ -53,6 +53,8 @@ Page({
       })
     })
 
+    // 获取用户经纬度
+    this.getCenterLocation();
   },
 
   onShow: function () {
@@ -74,9 +76,9 @@ Page({
     })
   },
   getUserInfo: function (e) {
-    if (e.detail.userInfo){
-      userInfo.get().then( res => {
-        if (!res.data.length){
+    if (e.detail.userInfo) {
+      userInfo.get().then(res => {
+        if (!res.data.length) {
           userInfo.add({
             data: e.detail.userInfo
           })
@@ -110,7 +112,7 @@ Page({
           }
         })
       })
-    }else{
+    } else {
       // 处理未授权的场景
       wx.showModal({
         title: '授权失败',
@@ -124,14 +126,30 @@ Page({
     }
   },
   /**
-   * 用户点击右上角分享
+   * 获取用户经纬度
    */
-  onShareAppMessage: function () {
-    return {
-      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
-      path: '/pages/map/map',
-      imageUrl: "/images/share.jpg"
-    }
+  getCenterLocation: function () {
+    wx.getLocation({
+      type: "gcj02",
+      success: (res) => {
+        this.setData({
+          longitude: res.longitude,
+          latitude: res.latitude,
+        });
+        console.log(
+          "当前中心点的位置：",
+          this.data.longitude,
+          this.data.latitude
+        );
+      },
+      fail: (err) => {
+        wx.showToast({
+          title: "GPS定位失败",
+          icon: "fail",
+        });
+        console.log("err", err);
+      },
+    });
   },
   onMarkerTap: function (event) {
     wx.navigateTo({
@@ -152,12 +170,12 @@ Page({
       })
     })
   },
-  hideMe:function(res){
+  hideMe: function (res) {
     this.setData({
       hideMe: true
     })
   },
-  showAdmin:function(res){
+  showAdmin: function (res) {
     wx.setStorage({
       key: 'showAdmin',
       data: !this.data.showAdmin,
@@ -166,9 +184,29 @@ Page({
       showAdmin: !this.data.showAdmin
     })
   },
-  search:function(){
+  search: function () {
     wx.navigateTo({
       url: '../search/search',
     })
-  }
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    return {
+      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
+      path: '/pages/map/map',
+      imageUrl: "/images/share.jpg"
+    }
+  },
+  /**
+   * 用户分享到朋友圈
+   */
+  onShareTimeline: function () {
+    return {
+      title: '我在' + config.appName + '上发现了好吃的，你也看看吧！',
+      path: '/pages/map/map',
+      imageUrl: "/images/share.jpg"
+    }
+  },
 })
